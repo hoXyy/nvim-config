@@ -1,2 +1,1 @@
-require("common.tabs").setTabs(2)
-vim.lsp.inlay_hint.enable(true)
+require('common.tabs').setTabs(2)
