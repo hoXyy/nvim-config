@@ -54,4 +54,10 @@ return {
     event = 'InsertEnter',
     opts = {},
   },
+  -- Autoclose HTML and JSX tags
+  {
+    'windwp/nvim-ts-autotag',
+    event = 'InsertEnter',
+    opts = {},
+  },
 }

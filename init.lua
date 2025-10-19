@@ -152,6 +152,7 @@ require('lazy').setup({
     },
   },
 
+  require 'plugins.ui',
   require 'plugins.formatting',
   require 'plugins.snacks',
   require 'plugins.which-key',
