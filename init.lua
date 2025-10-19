@@ -75,7 +75,10 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
--- [[ Basic Keymaps ]]
+-- enable border on floating windows
+vim.o.winborder = 'single'
+
+-- Basic Keymaps
 require 'keybinds'
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
