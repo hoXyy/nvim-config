@@ -126,7 +126,6 @@ require('lazy').setup({
   require 'plugins.languages',
   require 'plugins.autocompletion',
   require 'plugins.file-explorer',
-  require 'kickstart.plugins.indent_line',
 }, {
   ui = {
     icons = {},
