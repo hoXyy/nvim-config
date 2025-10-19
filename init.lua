@@ -124,7 +124,6 @@ require('lazy').setup({
   require 'plugins.formatting',
   require 'plugins.snacks',
   require 'plugins.which-key',
-  require 'plugins.telescope',
   require 'plugins.languages',
   require 'plugins.autocompletion',
   require 'plugins.file-explorer',
