@@ -9,8 +9,7 @@ vim.g.have_nerd_font = true
 -- Setting options
 
 -- Set up generic tab settings for most filetypes
-local setTabs = require('common.tabs').setTabs
-setTabs(2)
+require('common.tabs').setTabs(2)
 
 -- Make line numbers default
 vim.o.number = true
