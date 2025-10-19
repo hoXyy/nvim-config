@@ -3,13 +3,15 @@ return {
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   -- Colorscheme
   {
-    'nyoom-engineering/oxocarbon.nvim',
+    'catppuccin/nvim',
     priority = 1000,
     lazy = false,
     config = function()
       ---@diagnostic disable-next-line: missing-fields
-      vim.cmd.colorscheme 'oxocarbon'
-      vim.opt.background = 'dark'
+      require('catppuccin').setup {
+        flavour = 'mocha',
+      }
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
   -- Highlight, edit, and navigate code
