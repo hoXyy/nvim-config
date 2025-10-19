@@ -200,6 +200,7 @@ return { -- LSP Plugins
 
         ts_ls = {},
         eslint = {},
+        tailwindcss = {},
       }
 
       -- Ensure the servers and tools above are installed
