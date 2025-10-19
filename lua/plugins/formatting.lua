@@ -1,4 +1,5 @@
 return {
+  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
   -- Buffer tabs
   {
     'akinsho/bufferline.nvim',
@@ -6,7 +7,8 @@ return {
     dependencies = 'nvim-tree/nvim-web-devicons',
     opts = {},
   },
-  { -- Autoformat
+  -- Autoformat
+  {
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
