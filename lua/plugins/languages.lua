@@ -228,6 +228,7 @@ return { -- LSP Plugins
           gh_actions_ls = {},
           yamlls = {},
           vue_ls = {},
+          astro = {},
         },
         others = {},
       }
