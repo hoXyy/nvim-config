@@ -109,5 +109,12 @@ return {
       end,
       desc = '[S]earch [N]eovim files',
     },
+    {
+      '<leader>sp',
+      function()
+        Snacks.picker.projects()
+      end,
+      desc = '[S]earch [P]rojects',
+    },
   },
 }
