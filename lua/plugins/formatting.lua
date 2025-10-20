@@ -47,18 +47,13 @@ return {
       },
     },
   },
-  -- Autopairs
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    opts = {},
-  },
   -- Autoclose HTML and JSX tags
   {
     'windwp/nvim-ts-autotag',
     event = 'InsertEnter',
     opts = {},
   },
+  -- Improved comments support
   {
     'numToStr/Comment.nvim',
     opts = {},

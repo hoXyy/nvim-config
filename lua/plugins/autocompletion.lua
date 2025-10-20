@@ -105,8 +105,8 @@ return {
         return '%2l:%-2v'
       end
 
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      -- Autopairs
+      require('mini.pairs').setup()
     end,
   },
 }
