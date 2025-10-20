@@ -14,7 +14,7 @@ return {
       enabled = true,
     },
     picker = {},
-    indent = { enabled = true },
+    indent = { enabled = true, animate = { enabled = false } },
   },
   keys = {
     {
