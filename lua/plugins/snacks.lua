@@ -34,7 +34,7 @@ return {
     {
       '<leader>sf',
       function()
-        Snacks.picker.smart()
+        Snacks.picker.files()
       end,
       desc = '[S]earch [F]iles',
     },
