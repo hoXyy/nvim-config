@@ -155,6 +155,13 @@ return { -- LSP Plugins
         },
       }
 
+      local vue_plugin = {
+        name = '@vue/typescript-plugin',
+        location = vim.fn.expand '$MASON/packages' .. '/vue-language-server' .. '/node_modules/@vue/language-server',
+        languages = { 'vue' },
+        configNamespace = 'typescript',
+      }
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -214,6 +221,10 @@ return { -- LSP Plugins
               client.server_capabilities.documentFormattingProvider = false
               client.server_capabilities.documentRangeFormattingProvider = false
             end,
+            init_options = {
+              plugins = { vue_plugin },
+            },
+            filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
           },
           eslint = {
             settings = {
