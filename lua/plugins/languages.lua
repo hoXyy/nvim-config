@@ -264,6 +264,7 @@ return { -- LSP Plugins
         'black',
         'isort',
         'ansible-lint',
+        'prettier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -281,6 +282,12 @@ return { -- LSP Plugins
       if not vim.tbl_isempty(servers.others) then
         vim.lsp.enable(vim.tbl_keys(servers.others))
       end
+    end,
+  },
+  {
+    'wuelnerdotexe/vim-astro',
+    init = function()
+      vim.g.astro_typescript = 'enable'
     end,
   },
 }
