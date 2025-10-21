@@ -229,6 +229,7 @@ return { -- LSP Plugins
           yamlls = {},
           vue_ls = {},
           astro = {},
+          ansiblels = {},
         },
         others = {},
       }
@@ -251,6 +252,7 @@ return { -- LSP Plugins
         'stylua',
         'black',
         'isort',
+        'ansible-lint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
