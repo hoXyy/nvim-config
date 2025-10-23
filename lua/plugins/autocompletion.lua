@@ -69,6 +69,14 @@ return {
       signature = { enabled = true, window = {
         show_documentation = true,
       }, trigger = { enabled = true } },
+
+      cmdline = {
+        completion = {
+          menu = {
+            auto_show = true,
+          },
+        },
+      },
     },
   },
 
