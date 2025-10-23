@@ -72,4 +72,11 @@ return {
       },
     },
   },
+  -- Git blame
+  {
+    'braxtons12/blame_line.nvim',
+    opts = {
+      show_in_insert = false,
+    },
+  },
 }
