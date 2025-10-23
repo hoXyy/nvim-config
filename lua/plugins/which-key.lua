@@ -8,7 +8,6 @@ return {
         mappings = true,
         keys = {},
       },
-
       -- Document existing key chains
       spec = {
         { '<leader>s', group = '[S]earch' },
