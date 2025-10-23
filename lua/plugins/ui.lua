@@ -5,11 +5,12 @@ return {
   {
     'catppuccin/nvim',
     priority = 1000,
+    name = 'catppuccin',
     lazy = false,
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require('catppuccin').setup {
-        flavour = 'mocha',
+        flavour = 'macchiato',
       }
       vim.cmd.colorscheme 'catppuccin'
     end,
