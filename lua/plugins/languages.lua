@@ -240,6 +240,7 @@ return { -- LSP Plugins
           vue_ls = {},
           astro = {},
           ansiblels = {},
+          jsonls = {},
         },
         others = {},
       }
@@ -288,5 +289,8 @@ return { -- LSP Plugins
     init = function()
       vim.g.astro_typescript = 'enable'
     end,
+  },
+  {
+    'mfussenegger/nvim-ansible',
   },
 }

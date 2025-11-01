@@ -122,10 +122,10 @@ rtp:prepend(lazypath)
 require('lazy').setup({
   require 'plugins.ui',
   require 'plugins.formatting',
-  require 'plugins.snacks',
-  require 'plugins.which-key',
   require 'plugins.languages',
   require 'plugins.autocompletion',
+  require 'plugins.snacks',
+  require 'plugins.which-key',
   require 'plugins.file-explorer',
 }, {
   ui = {
