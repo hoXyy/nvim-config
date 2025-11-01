@@ -54,4 +54,8 @@ return {
     'numToStr/Comment.nvim',
     opts = {},
   },
+  {
+    'Wansmer/sibling-swap.nvim',
+    opts = {},
+  },
 }
