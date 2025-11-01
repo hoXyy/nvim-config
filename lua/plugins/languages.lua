@@ -234,6 +234,7 @@ return { -- LSP Plugins
           astro = {},
           ansiblels = {},
           jsonls = {},
+          html = {},
         },
         others = {},
       }
