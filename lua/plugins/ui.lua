@@ -51,10 +51,10 @@ return {
           enable = true,
           lookahead = true, -- jump forward to textobj
           keymaps = {
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-            ['ac'] = '@class.outer',
-            ['ic'] = '@class.inner',
+            ['af'] = { query = '@function.outer', desc = 'Select outer function' },
+            ['if'] = { query = '@function.inner', desc = 'Select inner function' },
+            ['ac'] = { query = '@class.outer', desc = 'Select outer class' },
+            ['ic'] = { query = '@class.inner', desc = 'Select inner class' },
           },
         },
         move = {
