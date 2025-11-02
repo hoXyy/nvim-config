@@ -1,4 +1,5 @@
 return {
+
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   -- Colorscheme
@@ -86,5 +87,29 @@ return {
     opts = {
       show_in_insert = false,
     },
+  },
+  -- Status line
+  {
+    'nvim-lualine/lualine.nvim',
+    opts = function()
+      local opts = {
+        options = {
+          theme = 'auto',
+          globalstatus = vim.o.laststatus == 3,
+          section_separators = { left = '', right = '' },
+          component_separators = { left = '', right = '' },
+        },
+        sections = {
+          lualine_a = { 'mode' },
+          lualine_b = { 'branch', 'filetype' },
+          lualine_c = { 'filename', 'diagnostics' },
+          lualine_x = { 'encoding', 'lsp_status' },
+          lualine_y = { 'progress', 'diff' },
+          lualine_z = { 'location', 'fileformat' },
+        },
+      }
+
+      return opts
+    end,
   },
 }
