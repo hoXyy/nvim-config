@@ -103,8 +103,8 @@ return {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'filetype' },
           lualine_c = { 'filename', 'diagnostics' },
-          lualine_x = { 'encoding', 'lsp_status' },
-          lualine_y = { 'progress', 'diff' },
+          lualine_x = { 'encoding', 'diff' },
+          lualine_y = { 'progress', 'lsp_status' },
           lualine_z = { 'location', 'fileformat' },
         },
       }
