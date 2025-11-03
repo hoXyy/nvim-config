@@ -184,28 +184,33 @@ return { -- LSP Plugins
             },
           },
           cssls = {},
-          ts_ls = {
+          vtsls = {
             settings = {
+              vtsls = {
+                tsserver = {
+                  globalPlugins = {
+                    vue_plugin,
+                  },
+                },
+              },
               typescript = {
                 inlayHints = {
-                  includeInlayParameterNameHints = 'all',
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                  includeInlayFunctionParameterTypeHints = true,
-                  includeInlayVariableTypeHints = true,
-                  includeInlayPropertyDeclarationTypeHints = true,
-                  includeInlayFunctionLikeReturnTypeHints = true,
-                  includeInlayEnumMemberValueHints = true,
+                  parameterNames = { enabled = 'all', suppressWhenArgumentMatchesName = false },
+                  parameterTypes = { enabled = true },
+                  variableTypes = { enabled = true },
+                  propertyDeclarationTypes = { enabled = true },
+                  functionLikeReturnTypes = { enabled = true },
+                  enumMemberValues = { enabled = true },
                 },
               },
               javascript = {
                 inlayHints = {
-                  includeInlayParameterNameHints = 'all',
-                  includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                  includeInlayFunctionParameterTypeHints = true,
-                  includeInlayVariableTypeHints = true,
-                  includeInlayPropertyDeclarationTypeHints = true,
-                  includeInlayFunctionLikeReturnTypeHints = true,
-                  includeInlayEnumMemberValueHints = true,
+                  parameterNames = { enabled = 'all', suppressWhenArgumentMatchesName = false },
+                  parameterTypes = { enabled = true },
+                  variableTypes = { enabled = true },
+                  propertyDeclarationTypes = { enabled = true },
+                  functionLikeReturnTypes = { enabled = true },
+                  enumMemberValues = { enabled = true },
                 },
               },
             },
@@ -213,9 +218,6 @@ return { -- LSP Plugins
               client.server_capabilities.documentFormattingProvider = false
               client.server_capabilities.documentRangeFormattingProvider = false
             end,
-            init_options = {
-              plugins = { vue_plugin },
-            },
             filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
           },
           eslint = {
