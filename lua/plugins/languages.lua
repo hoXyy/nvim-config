@@ -187,6 +187,9 @@ return { -- LSP Plugins
           vtsls = {
             settings = {
               vtsls = {
+                experimental = {
+                  maxInlayHintLength = 30,
+                },
                 tsserver = {
                   globalPlugins = {
                     vue_plugin,
@@ -195,7 +198,7 @@ return { -- LSP Plugins
               },
               typescript = {
                 inlayHints = {
-                  parameterNames = { enabled = 'all', suppressWhenArgumentMatchesName = false },
+                  parameterNames = { enabled = 'all', suppressWhenArgumentMatchesName = true },
                   parameterTypes = { enabled = true },
                   variableTypes = { enabled = true },
                   propertyDeclarationTypes = { enabled = true },
@@ -205,7 +208,7 @@ return { -- LSP Plugins
               },
               javascript = {
                 inlayHints = {
-                  parameterNames = { enabled = 'all', suppressWhenArgumentMatchesName = false },
+                  parameterNames = { enabled = 'all', suppressWhenArgumentMatchesName = true },
                   parameterTypes = { enabled = true },
                   variableTypes = { enabled = true },
                   propertyDeclarationTypes = { enabled = true },
