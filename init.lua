@@ -75,7 +75,7 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- enable border on floating windows
-vim.o.winborder = 'single'
+vim.o.winborder = 'solid'
 
 -- Basic Keymaps
 require 'keybinds'
