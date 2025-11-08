@@ -3,16 +3,38 @@ return {
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   -- Colorscheme
   {
-    'catppuccin/nvim',
+    'webhooked/kanso.nvim',
     priority = 1000,
-    name = 'catppuccin',
+    name = 'kanso',
     lazy = false,
     config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('catppuccin').setup {
-        flavour = 'macchiato',
+      vim.cmd.colorscheme 'kanso'
+
+      local palette_colors = require('kanso.colors').setup().palette
+
+      require('kanso').setup {
+        commentStyle = { italic = false },
+        keywordStyle = { italic = false },
+        background = {
+          dark = 'ink',
+        },
+        colors = {
+          theme = {
+            ink = {
+              ui = {
+                pmenu = {
+                  bg = palette_colors.zenBg0,
+                  bg_border = palette_colors.zenBg0,
+                },
+                float = {
+                  bg = palette_colors.zenBg0,
+                  bg_border = palette_colors.zenBg0,
+                },
+              },
+            },
+          },
+        },
       }
-      vim.cmd.colorscheme 'catppuccin'
     end,
   },
   -- Highlight, edit, and navigate code
