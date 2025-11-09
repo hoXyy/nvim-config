@@ -132,4 +132,7 @@ return {
       return opts
     end,
   },
+  {
+    'norcalli/nvim-colorizer.lua',
+  },
 }
