@@ -106,6 +106,7 @@ return {
     'braxtons12/blame_line.nvim',
     opts = {
       show_in_insert = false,
+      delay = 1000,
     },
   },
   -- Status line
