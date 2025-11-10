@@ -6,6 +6,7 @@ return {
   },
   priority = 1000,
   lazy = false,
+  ---@type snacks.Config
   opts = {
     lazygit = {
       enabled = true,
@@ -13,7 +14,9 @@ return {
     terminal = {
       enabled = true,
     },
-    picker = {},
+    picker = {
+      layout = 'bottom',
+    },
     indent = { enabled = true, animate = { enabled = false } },
   },
   keys = {
