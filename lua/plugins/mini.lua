@@ -30,6 +30,9 @@ return {
 
       -- Move selection
       require('mini.move').setup()
+
+      -- Status line
+      require('mini.statusline').setup { use_icons = true }
     end,
   },
 }
