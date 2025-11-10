@@ -223,14 +223,6 @@ return { -- LSP Plugins
             end,
             filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
           },
-          eslint = {
-            settings = {
-              codeActionOnSave = {
-                enable = true,
-                mode = 'all',
-              },
-            },
-          },
           tailwindcss = {},
           docker_language_server = {},
           gh_actions_ls = {},
@@ -291,5 +283,15 @@ return { -- LSP Plugins
   },
   {
     'mfussenegger/nvim-ansible',
+  },
+  {
+    'esmuellert/nvim-eslint',
+    config = function()
+      require('nvim-eslint').setup {
+        settings = {
+          format = true,
+        },
+      }
+    end,
   },
 }
