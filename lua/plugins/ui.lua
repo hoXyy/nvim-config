@@ -135,4 +135,8 @@ return {
   {
     'norcalli/nvim-colorizer.lua',
   },
+  {
+    'monkoose/matchparen.nvim',
+    opts = {},
+  },
 }
