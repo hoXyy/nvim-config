@@ -132,13 +132,6 @@ require('lazy').setup({
   ui = {
     icons = {},
   },
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        'matchparen',
-      },
-    },
-  },
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
