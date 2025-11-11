@@ -66,6 +66,9 @@ vim.o.inccommand = 'split'
 -- Show which line your cursor is on
 vim.o.cursorline = true
 
+-- Use block cursor
+vim.o.guicursor = ''
+
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
 
@@ -75,7 +78,7 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- enable border on floating windows
-vim.o.winborder = 'solid'
+vim.o.winborder = 'none'
 
 -- Basic Keymaps
 require 'keybinds'
