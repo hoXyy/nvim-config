@@ -99,11 +99,13 @@ return {
   -- Show both absolute and relative numbers
   {
     'shrynx/line-numbers.nvim',
+    event = 'VimEnter',
     opts = {},
   },
   -- Git blame
   {
     'braxtons12/blame_line.nvim',
+    event = 'BufReadPost',
     opts = {
       show_in_insert = false,
       delay = 1000,
@@ -112,6 +114,7 @@ return {
   -- Status line
   {
     'nvim-lualine/lualine.nvim',
+    event = 'VimEnter',
     opts = function()
       local opts = {
         options = {

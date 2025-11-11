@@ -1,6 +1,7 @@
 return {
   -- Detect tabstop and shiftwidth automatically
   'NMAC427/guess-indent.nvim',
+  event = { 'BufWritePre' },
   -- Autoformat
   {
     'stevearc/conform.nvim',
@@ -45,10 +46,12 @@ return {
   -- Improved comments support
   {
     'numToStr/Comment.nvim',
+    event = 'VeryLazy',
     opts = {},
   },
   {
     'Wansmer/sibling-swap.nvim',
+    event = 'VeryLazy',
     opts = {},
   },
 }

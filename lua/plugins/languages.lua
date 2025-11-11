@@ -277,15 +277,18 @@ return { -- LSP Plugins
   },
   {
     'wuelnerdotexe/vim-astro',
+    ft = 'astro',
     init = function()
       vim.g.astro_typescript = 'enable'
     end,
   },
   {
     'mfussenegger/nvim-ansible',
+    ft = { 'yaml', 'yaml.ansible' },
   },
   {
     'esmuellert/nvim-eslint',
+    ft = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx', 'vue', 'svelte', 'astro' },
     config = function()
       require('nvim-eslint').setup {
         settings = {
