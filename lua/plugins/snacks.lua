@@ -15,7 +15,7 @@ return {
       enabled = true,
     },
     picker = {
-      layout = 'bottom',
+      layout = 'select',
     },
     indent = { enabled = true, animate = { enabled = false } },
   },
