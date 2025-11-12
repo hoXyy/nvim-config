@@ -267,7 +267,11 @@ return { -- LSP Plugins
 
       require('mason-lspconfig').setup {
         ensure_installed = {},
-        automatic_enable = true,
+        automatic_enable = {
+          exclude = {
+            'tailwindcss',
+          },
+        },
       }
 
       if not vim.tbl_isempty(servers.others) then
