@@ -1,3 +1,5 @@
+vim.opt.statuscolumn = '%=%{v:lnum} %{v:relnum ? v:relnum : 0}  '
+
 return {
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -95,12 +97,6 @@ return {
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
-  },
-  -- Show both absolute and relative numbers
-  {
-    'shrynx/line-numbers.nvim',
-    event = 'VimEnter',
-    opts = {},
   },
   -- Git blame
   {
