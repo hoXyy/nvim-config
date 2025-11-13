@@ -1,8 +1,6 @@
 vim.opt.statuscolumn = '%=%{v:lnum} %{v:relnum ? v:relnum : 0}  '
 
 return {
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   -- Colorscheme
   {
     'webhooked/kanso.nvim',
@@ -96,15 +94,6 @@ return {
     },
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-  },
-  -- Git blame
-  {
-    'braxtons12/blame_line.nvim',
-    event = 'BufReadPost',
-    opts = {
-      show_in_insert = false,
-      delay = 1000,
     },
   },
   -- Status line

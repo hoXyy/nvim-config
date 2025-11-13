@@ -49,9 +49,4 @@ return {
     event = 'VeryLazy',
     opts = {},
   },
-  {
-    'Wansmer/sibling-swap.nvim',
-    event = 'VeryLazy',
-    opts = {},
-  },
 }
