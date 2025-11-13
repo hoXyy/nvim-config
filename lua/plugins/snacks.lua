@@ -11,9 +11,6 @@ return {
     lazygit = {
       enabled = true,
     },
-    terminal = {
-      enabled = true,
-    },
     picker = {
       layout = 'select',
     },

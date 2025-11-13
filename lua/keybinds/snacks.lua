@@ -5,7 +5,3 @@ if vim.fn.executable 'lazygit' == 1 then
     Snacks.lazygit()
   end, { desc = 'Open Lazygit' })
 end
-
-map('n', '<leader>fT', function()
-  Snacks.terminal()
-end, { desc = 'Open Terminal' })
