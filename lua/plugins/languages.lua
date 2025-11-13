@@ -184,6 +184,14 @@ return { -- LSP Plugins
             },
           },
           cssls = {},
+          eslint = {
+            settings = {
+              codeActionOnSave = {
+                enable = true,
+                mode = 'all',
+              },
+            },
+          },
           vtsls = {
             settings = {
               vtsls = {
@@ -289,16 +297,5 @@ return { -- LSP Plugins
   {
     'mfussenegger/nvim-ansible',
     ft = { 'yaml', 'yaml.ansible' },
-  },
-  {
-    'esmuellert/nvim-eslint',
-    ft = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx', 'vue', 'svelte', 'astro' },
-    config = function()
-      require('nvim-eslint').setup {
-        settings = {
-          format = true,
-        },
-      }
-    end,
   },
 }
