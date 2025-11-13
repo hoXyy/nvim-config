@@ -1,5 +1,3 @@
-vim.opt.statuscolumn = '%=%{v:lnum} %{v:relnum ? v:relnum : 0}  '
-
 return {
   -- Colorscheme
   {

@@ -79,3 +79,6 @@ vim.o.confirm = true
 
 -- enable border on floating windows
 vim.o.winborder = 'none'
+
+-- Relative and absolute numbers in status column
+vim.opt.statuscolumn = '%=%{v:lnum} %{v:relnum ? v:relnum : 0}  '
