@@ -6,3 +6,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.hl.on_yank()
   end,
 })
+
+-- Set Ansible filetype correctly
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = { 'playbook*.yml', '*/playbooks/*.yml', '*/roles/*/tasks/*.yml', '*/roles/*/handlers/*.yml' },
+  callback = function()
+    vim.bo.filetype = 'yaml.ansible'
+  end,
+})

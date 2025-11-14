@@ -30,6 +30,15 @@ return {
 
       -- Move selection
       require('mini.move').setup()
+
+      -- Colorize HEX colors
+      require('mini.hipatterns').setup { highlighters = { hex_color = require('mini.hipatterns').gen_highlighter.hex_color() } }
+
+      -- Status line
+      require('mini.statusline').setup { use_icons = true }
+
+      -- Better comments
+      require('mini.comment').setup()
     end,
   },
 }

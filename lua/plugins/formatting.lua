@@ -43,10 +43,4 @@ return {
     event = 'InsertEnter',
     opts = {},
   },
-  -- Improved comments support
-  {
-    'numToStr/Comment.nvim',
-    event = 'VeryLazy',
-    opts = {},
-  },
 }

@@ -287,15 +287,4 @@ return { -- LSP Plugins
       end
     end,
   },
-  {
-    'wuelnerdotexe/vim-astro',
-    ft = 'astro',
-    init = function()
-      vim.g.astro_typescript = 'enable'
-    end,
-  },
-  {
-    'mfussenegger/nvim-ansible',
-    ft = { 'yaml', 'yaml.ansible' },
-  },
 }
