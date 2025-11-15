@@ -1,4 +1,10 @@
+local map = function(keys, func, desc, mode)
+  mode = mode or 'n'
+  vim.keymap.set(mode, keys, func, { desc = 'Picker: ' .. desc })
+end
+
 return {
+
   { -- Collection of various small independent plugins/modules
     'nvim-mini/mini.nvim',
     config = function()
@@ -39,6 +45,39 @@ return {
 
       -- Better comments
       require('mini.comment').setup()
+
+      -- Picker
+      local win_config = function()
+        local height = math.floor(0.618 * vim.o.lines)
+        local width = math.floor(0.618 * vim.o.columns)
+        return {
+          anchor = 'NW',
+          height = height,
+          width = width,
+          row = math.floor(0.5 * (vim.o.lines - height)),
+          col = math.floor(0.5 * (vim.o.columns - width)),
+        }
+      end
+      require('mini.pick').setup {
+        use_cache = true,
+        window = { config = win_config },
+      }
+
+      -- Extra
+      require('mini.extra').setup()
+
+      -- Picker keybinds
+      local builtins = MiniPick.builtin
+      map('<leader>sh', builtins.help, '[S]earch [H]elp')
+      map('<leader>sf', builtins.files, '[S]earch [F]iles')
+      map('<leader>sw', function()
+        builtins.grep { pattern = vim.fn.expand '<cword>' }
+      end, '[S]earch current [W]ord', { 'n', 'x' })
+      map('<leader>sg', builtins.grep, '[S]earch by [G]rep')
+      map('<leader>sd', MiniExtra.pickers.diagnostic, '[S]earch [D]iagnostics')
+      map('<leader>sk', MiniExtra.pickers.keymaps, '[S]earch [K]eymaps')
+      map('<leader>/', MiniExtra.pickers.buf_lines, '[/] Fuzzily search in current buffer')
+      map('<leader><leader>', builtins.buffers, '[ ] Find existing buffers')
     end,
   },
 }

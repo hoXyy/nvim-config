@@ -15,7 +15,6 @@ return { -- LSP Plugins
     ft = 'lua',
     opts = {
       library = {
-        { path = 'snacks.nvim', words = { 'Snacks' } },
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
       },
     },
@@ -52,16 +51,21 @@ return { -- LSP Plugins
           map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
 
           -- Find references for the word under your cursor.
-          map('grr', require('snacks').picker.lsp_references, '[G]oto [R]eferences')
+          -- map('grr', require('snacks').picker.lsp_references, '[G]oto [R]eferences')
+          map('grr', function()
+            MiniExtra.pickers.lsp { scope = 'references' }
+          end, '[G]oto [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gri', require('snacks').picker.lsp_implementations, '[G]oto [I]mplementation')
+          map('gri', function()
+            MiniExtra.pickers.lsp { scope = 'implementation' }
+          end, '[G]oto [I]mplementation')
 
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('grd', require('snacks').picker.lsp_definitions, '[G]oto [D]efinition')
+          map('grd', vim.lsp.buf.definition, '[G]oto [D]efinition')
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
@@ -69,16 +73,20 @@ return { -- LSP Plugins
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('gO', require('snacks').picker.lsp_symbols, 'Open Document Symbols')
+          map('gO', function()
+            MiniExtra.pickers.lsp { scope = 'document_symbol' }
+          end, 'Open Document Symbols')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map('gW', require('snacks').picker.lsp_workspace_symbols, 'Open Workspace Symbols')
+          map('gW', function()
+            MiniExtra.pickers.lsp { scope = 'workspace_symbol' }
+          end, 'Open Workspace Symbols')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
-          map('grt', require('snacks').picker.lsp_type_definitions, '[G]oto [T]ype Definition')
+          map('grt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
 
           -- Show floating diagnostics window
           map('<leader>D', vim.diagnostic.open_float, 'Show floating diagnostics window on current line')
