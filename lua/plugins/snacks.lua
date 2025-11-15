@@ -12,7 +12,7 @@ return {
       enabled = true,
     },
     picker = {
-      layout = 'select',
+      layout = 'ivy',
     },
     indent = { enabled = true, animate = { enabled = false } },
   },
