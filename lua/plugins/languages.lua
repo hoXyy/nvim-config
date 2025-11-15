@@ -80,6 +80,9 @@ return { -- LSP Plugins
           --  the definition of its *type*, not where it was *defined*.
           map('grt', require('snacks').picker.lsp_type_definitions, '[G]oto [T]ype Definition')
 
+          -- Show floating diagnostics window
+          map('<leader>D', vim.diagnostic.open_float, 'Show floating diagnostics window on current line')
+
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
@@ -122,7 +125,7 @@ return { -- LSP Plugins
       -- See :help vim.diagnostic.Opts
       vim.diagnostic.config {
         severity_sort = true,
-        float = { border = 'solid', source = 'if_many' },
+        float = { border = 'none', source = 'if_many' },
         underline = { severity = vim.diagnostic.severity.ERROR },
         signs = vim.g.have_nerd_font and {
           text = {
