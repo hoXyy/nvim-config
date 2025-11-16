@@ -78,7 +78,7 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- enable border on floating windows
-vim.o.winborder = 'solid'
+vim.o.winborder = 'single'
 
 -- Relative and absolute numbers in status column
 vim.opt.statuscolumn = '%=%{v:lnum} %{v:relnum ? v:relnum : 0}  '
