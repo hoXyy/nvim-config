@@ -78,13 +78,6 @@ return {
       map('<leader>sk', MiniExtra.pickers.keymaps, '[S]earch [K]eymaps')
       map('<leader>/', MiniExtra.pickers.buf_lines, '[/] Fuzzily search in current buffer')
       map('<leader><leader>', builtins.buffers, '[ ] Find existing buffers')
-
-      -- Indent scope
-      require('mini.indentscope').setup {
-        draw = {
-          animation = require('mini.indentscope').gen_animation.none(),
-        },
-      }
     end,
   },
 }
