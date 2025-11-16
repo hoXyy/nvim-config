@@ -1,38 +1,14 @@
 return {
   -- Colorscheme
   {
-    'webhooked/kanso.nvim',
+    'sainnhe/sonokai',
     priority = 1000,
-    name = 'kanso',
+    name = 'sonokai',
     lazy = false,
     config = function()
-      vim.cmd.colorscheme 'kanso'
-
-      local palette_colors = require('kanso.colors').setup().palette
-
-      require('kanso').setup {
-        commentStyle = { italic = false },
-        keywordStyle = { italic = false },
-        background = {
-          dark = 'ink',
-        },
-        colors = {
-          theme = {
-            ink = {
-              ui = {
-                pmenu = {
-                  bg = palette_colors.zenBg0,
-                  bg_border = palette_colors.zenBg0,
-                },
-                float = {
-                  bg = palette_colors.zenBg0,
-                  bg_border = palette_colors.zenBg0,
-                },
-              },
-            },
-          },
-        },
-      }
+      vim.g.sonokai_style = 'andromeda'
+      vim.cmd.colorscheme 'sonokai'
+      vim.opt.background = 'dark'
     end,
   },
   -- Highlight, edit, and navigate code
