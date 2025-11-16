@@ -32,6 +32,7 @@ return {
         },
 
         menu = {
+          border = 'none',
           draw = {
             components = {
               kind_icon = {
