@@ -1,0 +1,18 @@
+name: Notify Dotfiles Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify dotfiles repo
+        run: |
+          curl -x POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.PARENT_REPO_TOKEN }}" \
+          https://api.github.com/repos/hoXyy/dotfiles/dispatches \
+          -d '{"event_type": "submodule_update"}'
