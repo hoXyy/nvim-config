@@ -1,27 +1,23 @@
--- Install `lazy.nvim` plugin manager
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-  if vim.v.shell_error ~= 0 then
-    error('Error cloning lazy.nvim:\n' .. out)
-  end
-end
-
----@type vim.Option
-local rtp = vim.opt.rtp
-rtp:prepend(lazypath)
-
-require('lazy').setup({
-  require 'plugins.mini',
-  require 'plugins.ui',
-  require 'plugins.formatting',
-  require 'plugins.languages',
-  require 'plugins.autocompletion',
-  require 'plugins.which-key',
-  require 'plugins.file-explorer',
-}, {
-  ui = {
-    icons = {},
+-- Add plugins and set up colorscheme as the first thing
+vim.pack.add {
+  {
+    src = 'https://github.com/catppuccin/nvim',
+    name = 'catppuccin',
   },
-})
+  'https://github.com/windwp/nvim-ts-autotag',
+  { src = 'https://github.com/nvim-lualine/lualine.nvim', name = 'lualine' },
+  { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
+  { src = 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects', version = 'main' },
+  { src = 'https://github.com/folke/which-key.nvim', version = 'v3.17.0' },
+  'https://github.com/nvim-tree/nvim-web-devicons',
+  'https://github.com/NMAC427/guess-indent.nvim',
+}
+
+require('catppuccin').setup {
+  flavor = 'macchiato',
+}
+
+vim.cmd.colorscheme 'catppuccin'
+
+require 'plugins.ui'
+require 'plugins.languages'

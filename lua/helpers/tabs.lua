@@ -1,4 +1,3 @@
--- helper function to set tabs
 return {
   setTabs = function(num)
     vim.opt.tabstop = num

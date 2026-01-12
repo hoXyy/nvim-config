@@ -1,0 +1,71 @@
+local filetypes_to_ignore = {}
+local table_except = require('helpers.tables').table_except
+local treesitter = require 'nvim-treesitter'
+treesitter.setup()
+
+local ensure_installed = {
+  'bash',
+  'c',
+  'css',
+  'diff',
+  'html',
+  'lua',
+  'luadoc',
+  'markdown',
+  'markdown_inline',
+  'query',
+  'vim',
+  'vue',
+  'vimdoc',
+  'typescript',
+  'scss',
+  'nix',
+}
+
+treesitter.install(table_except(ensure_installed, treesitter.get_installed()))
+
+local function detected_ft_cb(args)
+  local bufnr = args.bur
+  local ft = args.match
+
+  if vim.list_contains(filetypes_to_ignore, ft) then
+    return
+  end
+
+  treesitter.install(ft):await(function()
+    if vim.list_contains(treesitter.get_installed(), ft) then
+      vim.treesitter.start(bufnr)
+    end
+  end)
+end
+
+vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('TreesitterAutoInstall', {
+    clear = true,
+  }),
+  callback = detected_ft_cb,
+})
+
+require('nvim-treesitter-textobjects').setup {
+  select = {
+    lookahead = true,
+  },
+}
+
+-- Treesitter textobjects keybinds
+-- Select
+vim.keymap.set({ 'x', 'o' }, 'af', function()
+  require('nvim-treesitter.textobjects.select').select_textobject('@function.outer', 'textobjects')
+end, { desc = 'Select [a]round [f]unction' })
+
+vim.keymap.set({ 'x', 'o' }, 'if', function()
+  require('nvim-treesitter.textobjects.select').select_textobject('@function.inner', 'textobjects')
+end, { desc = 'Select [i]nside [f]unction' })
+
+vim.keymap.set({ 'x', 'o' }, 'ac', function()
+  require('nvim-treesitter.textobjects.select').select_textobject('@class.outer', 'textobjects')
+end, { desc = 'Select [a]round [c]lass' })
+
+vim.keymap.set({ 'x', 'o' }, 'ic', function()
+  require('nvim-treesitter.textobjects.select').select_textobject('@class.inner', 'textobjects')
+end, { desc = 'Select [i]nside [c]lass' })

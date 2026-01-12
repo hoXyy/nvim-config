@@ -1,0 +1,4 @@
+require 'plugins.ui.icons'
+require 'plugins.ui.statusline'
+require 'plugins.ui.treesitter'
+require 'plugins.ui.which-key'
