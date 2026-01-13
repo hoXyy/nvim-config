@@ -1,4 +1,4 @@
-local opts = {
+require('lualine').setup {
   options = {
     theme = 'auto',
     globalstatus = vim.o.laststatus == 3,
@@ -14,5 +14,3 @@ local opts = {
     lualine_z = { 'location', 'fileformat' },
   },
 }
-
-require('lualine').setup(opts)

@@ -11,6 +11,13 @@ vim.pack.add {
   { src = 'https://github.com/folke/which-key.nvim', version = 'v3.17.0' },
   'https://github.com/nvim-tree/nvim-web-devicons',
   'https://github.com/NMAC427/guess-indent.nvim',
+  'https://github.com/j-hui/fidget.nvim',
+  'https://github.com/stevearc/conform.nvim',
+  'https://github.com/mason-org/mason.nvim',
+  'https://github.com/mason-org/mason-lspconfig.nvim',
+  'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/folke/lazydev.nvim',
 }
 
 require('catppuccin').setup {
