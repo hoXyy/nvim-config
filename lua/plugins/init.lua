@@ -1,9 +1,6 @@
 -- Add plugins and set up colorscheme as the first thing
 vim.pack.add {
-  {
-    src = 'https://github.com/catppuccin/nvim',
-    name = 'catppuccin',
-  },
+  'https://github.com/oskarnurm/koda.nvim',
   'https://github.com/windwp/nvim-ts-autotag',
   { src = 'https://github.com/nvim-lualine/lualine.nvim', name = 'lualine' },
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
@@ -18,13 +15,14 @@ vim.pack.add {
   'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim',
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/folke/lazydev.nvim',
+  'https://github.com/lukas-reineke/indent-blankline.nvim',
+  'https://github.com/serhez/bento.nvim',
+  'https://github.com/folke/snacks.nvim',
+  'https://github.com/nvim-mini/mini.nvim',
+  'https://github.com/hrsh7th/nvim-cmp',
 }
 
-require('catppuccin').setup {
-  flavor = 'macchiato',
-}
-
-vim.cmd.colorscheme 'catppuccin'
+vim.cmd.colorscheme 'koda'
 
 require 'plugins.ui'
 require 'plugins.languages'

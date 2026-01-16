@@ -1,7 +1,20 @@
-local filetypes_to_ignore = {}
 local table_except = require('helpers.tables').table_except
 local treesitter = require 'nvim-treesitter'
 treesitter.setup()
+
+-- adding plugin filetypes here to stop warning messages from autoinstall script
+local filetypes_to_ignore = {
+  'checkhealth',
+  'fidget',
+  'snacks_picker_preview',
+  'snacks_picker_list',
+  'snacks_picker_input',
+  'snacks_layout_box',
+  'snacks_win_backdrop',
+  'snacks_terminal',
+  'minifiles',
+  'miniicons',
+}
 
 local ensure_installed = {
   'bash',
@@ -20,15 +33,20 @@ local ensure_installed = {
   'typescript',
   'scss',
   'nix',
+  'styled',
 }
 
 treesitter.install(table_except(ensure_installed, treesitter.get_installed()))
 
 local function detected_ft_cb(args)
-  local bufnr = args.bur
+  local bufnr = args.buf
   local ft = args.match
 
   if vim.list_contains(filetypes_to_ignore, ft) then
+    return
+  end
+
+  if not ft or ft == '' then
     return
   end
 

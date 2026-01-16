@@ -3,8 +3,8 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
 
-vim.g.leader = ' '
-vim.g.localleader = ' '
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 require('helpers.tabs').setTabs(2)
 
@@ -39,7 +39,7 @@ vim.o.cursorline = true
 
 vim.o.scrolloff = 10
 
-vim.o.winborder = 'single'
+vim.o.winborder = 'rounded'
 
 vim.opt.statuscolumn = '%=%{v:lnum} %{v:relnum ? v:relnum : 0}  '
 

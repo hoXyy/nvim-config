@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "bento.nvim": {
+      "rev": "e7c67aa27d1e21fd3312bde85575c12788c69e6c",
+      "src": "https://github.com/serhez/bento.nvim"
+    },
     "catppuccin": {
       "rev": "beaf41a30c26fd7d6c386d383155cbd65dd554cd",
       "src": "https://github.com/catppuccin/nvim"
@@ -15,6 +19,14 @@
     "guess-indent.nvim": {
       "rev": "84a4987ff36798c2fc1169cbaff67960aed9776f",
       "src": "https://github.com/NMAC427/guess-indent.nvim"
+    },
+    "indent-blankline.nvim": {
+      "rev": "005b56001b2cb30bfa61b7986bc50657816ba4ba",
+      "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
+    },
+    "koda.nvim": {
+      "rev": "35254327ad6b2df2eb089fab6fc87d79dd9d6046",
+      "src": "https://github.com/oskarnurm/koda.nvim"
     },
     "lazydev.nvim": {
       "rev": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d",
@@ -35,6 +47,14 @@
     "mason.nvim": {
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mini.nvim": {
+      "rev": "19973fa2c13399d68bf8d2cd98b0cb7367a8a72a",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "nvim-cmp": {
+      "rev": "85bbfad83f804f11688d1ab9486b459e699292d6",
+      "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
       "rev": "92ee7d42320edfbb81f3cad851314ab197fa324a",
@@ -57,6 +77,10 @@
     "nvim-web-devicons": {
       "rev": "803353450c374192393f5387b6a0176d0972b848",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "snacks.nvim": {
+      "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
+      "src": "https://github.com/folke/snacks.nvim"
     },
     "which-key.nvim": {
       "rev": "fcbf4eea17cb299c02557d576f0d568878e354a4",
