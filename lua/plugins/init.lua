@@ -1,6 +1,6 @@
 -- Add plugins and set up colorscheme as the first thing
 vim.pack.add {
-  'https://github.com/oskarnurm/koda.nvim',
+  'https://github.com/rmehri01/onenord.nvim',
   'https://github.com/windwp/nvim-ts-autotag',
   { src = 'https://github.com/nvim-lualine/lualine.nvim', name = 'lualine' },
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
@@ -22,7 +22,15 @@ vim.pack.add {
   'https://github.com/hrsh7th/nvim-cmp',
 }
 
-vim.cmd.colorscheme 'koda'
+require('onenord').setup {
+  theme = 'dark',
+  styles = {
+    comments = 'italic',
+    functions = 'bold',
+  },
+}
+
+vim.cmd.colorscheme 'onenord'
 
 require 'plugins.ui'
 require 'plugins.languages'

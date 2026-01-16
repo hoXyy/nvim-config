@@ -4,10 +4,6 @@
       "rev": "e7c67aa27d1e21fd3312bde85575c12788c69e6c",
       "src": "https://github.com/serhez/bento.nvim"
     },
-    "catppuccin": {
-      "rev": "beaf41a30c26fd7d6c386d383155cbd65dd554cd",
-      "src": "https://github.com/catppuccin/nvim"
-    },
     "conform.nvim": {
       "rev": "238f542a118984a88124fc915d5b981680418707",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -77,6 +73,10 @@
     "nvim-web-devicons": {
       "rev": "803353450c374192393f5387b6a0176d0972b848",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "onenord.nvim": {
+      "rev": "b68f1e66736840e837c2a77ebff59c932fcb70c7",
+      "src": "https://github.com/rmehri01/onenord.nvim"
     },
     "snacks.nvim": {
       "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
