@@ -59,6 +59,9 @@ end, '[S]earch [D]iagnostics')
 map('<leader>sk', function()
   Snacks.picker.keymaps()
 end, '[S]earch [K]eymaps')
+map('<leader>sC', function()
+  Snacks.picker.commands()
+end, '[S]earch [C]ommands')
 
 -- Lazygit
 map('<leader>lg', function()
