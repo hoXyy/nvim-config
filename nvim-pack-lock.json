@@ -20,10 +20,6 @@
       "rev": "005b56001b2cb30bfa61b7986bc50657816ba4ba",
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
     },
-    "koda.nvim": {
-      "rev": "b21e91effca3b6238a6ee970699ee93c04f5e602",
-      "src": "https://github.com/oskarnurm/koda.nvim"
-    },
     "lazydev.nvim": {
       "rev": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d",
       "src": "https://github.com/folke/lazydev.nvim"
@@ -43,6 +39,10 @@
     "mason.nvim": {
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mellow.nvim": {
+      "rev": "5cd188489bcc7eb512f0a30581ad972070f8e5cd",
+      "src": "https://github.com/mellow-theme/mellow.nvim"
     },
     "mini.nvim": {
       "rev": "19973fa2c13399d68bf8d2cd98b0cb7367a8a72a",
@@ -73,10 +73,6 @@
     "nvim-web-devicons": {
       "rev": "803353450c374192393f5387b6a0176d0972b848",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
-    },
-    "onenord.nvim": {
-      "rev": "b68f1e66736840e837c2a77ebff59c932fcb70c7",
-      "src": "https://github.com/rmehri01/onenord.nvim"
     },
     "snacks.nvim": {
       "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
