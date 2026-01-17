@@ -19,6 +19,12 @@ vim.pack.add {
   'https://github.com/serhez/bento.nvim',
   'https://github.com/folke/snacks.nvim',
   'https://github.com/nvim-mini/mini.nvim',
+  'https://github.com/nvim-lua/plenary.nvim',
+  'https://github.com/nvim-tree/nvim-tree.lua',
+  'https://github.com/igorlfs/nvim-lsp-file-operations',
+  'https://github.com/onsails/lspkind.nvim',
+  'https://github.com/folke/trouble.nvim',
+  'https://github.com/folke/todo-comments.nvim',
   'https://github.com/hrsh7th/nvim-cmp',
 }
 

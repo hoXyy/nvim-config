@@ -24,6 +24,10 @@
       "rev": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d",
       "src": "https://github.com/folke/lazydev.nvim"
     },
+    "lspkind.nvim": {
+      "rev": "53374a2dbcb959f1d0d5d3cf6c47c4b029151c6e",
+      "src": "https://github.com/onsails/lspkind.nvim"
+    },
     "lualine": {
       "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
@@ -45,19 +49,27 @@
       "src": "https://github.com/mellow-theme/mellow.nvim"
     },
     "mini.nvim": {
-      "rev": "19973fa2c13399d68bf8d2cd98b0cb7367a8a72a",
+      "rev": "c9d3bc2df3015d82eabe3d2d88dac1ef5746e9e8",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-cmp": {
       "rev": "85bbfad83f804f11688d1ab9486b459e699292d6",
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
+    "nvim-lsp-file-operations": {
+      "rev": "679cc6921a04d75748e22e2cf34e7c0c347f308c",
+      "src": "https://github.com/igorlfs/nvim-lsp-file-operations"
+    },
     "nvim-lspconfig": {
       "rev": "92ee7d42320edfbb81f3cad851314ab197fa324a",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
+    "nvim-tree.lua": {
+      "rev": "ca8d82fff26cb12ced239713e3222f4a9dcd0da0",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
     "nvim-treesitter": {
-      "rev": "15b3416cc1f557c4932468e512a0bd45871167bc",
+      "rev": "8aada0e3940c573e38b417a226b43bc8675f8958",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -74,9 +86,21 @@
       "rev": "803353450c374192393f5387b6a0176d0972b848",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
+    "plenary.nvim": {
+      "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
     "snacks.nvim": {
       "rev": "fe7cfe9800a182274d0f868a74b7263b8c0c020b",
       "src": "https://github.com/folke/snacks.nvim"
+    },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
+    },
+    "trouble.nvim": {
+      "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
+      "src": "https://github.com/folke/trouble.nvim"
     },
     "which-key.nvim": {
       "rev": "fcbf4eea17cb299c02557d576f0d568878e354a4",

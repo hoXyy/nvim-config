@@ -2,7 +2,7 @@ local table_except = require('helpers.tables').table_except
 local treesitter = require 'nvim-treesitter'
 treesitter.setup()
 
--- adding plugin filetypes here to stop warning messages from autoinstall script
+-- adding plugin and other filetypes here to stop warning messages from autoinstall script
 local filetypes_to_ignore = {
   'checkhealth',
   'fidget',
@@ -14,6 +14,10 @@ local filetypes_to_ignore = {
   'snacks_terminal',
   'minifiles',
   'miniicons',
+  'gitconfig',
+  'NvimTree',
+  'help',
+  'qf',
 }
 
 local ensure_installed = {

@@ -62,6 +62,9 @@ end, '[S]earch [K]eymaps')
 map('<leader>sC', function()
   Snacks.picker.commands()
 end, '[S]earch [C]ommands')
+map('<leader>st', function()
+  Snacks.picker.todo_comments()
+end, '[S]earch [T]odo Comments')
 
 -- Lazygit
 map('<leader>lg', function()

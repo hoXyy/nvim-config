@@ -26,18 +26,3 @@ require('mini.pairs').setup()
 
 -- Git diff
 require('mini.diff').setup()
-
--- File explorer
-require('mini.files').setup()
-
-local explorerOpen = false
-require('helpers.keymap').map('<leader>e', function()
-  if not explorerOpen then
-    MiniFiles.open()
-    explorerOpen = true
-    return
-  end
-
-  MiniFiles.close()
-  explorerOpen = false
-end, 'Open File Explorer')
