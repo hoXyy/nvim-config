@@ -32,6 +32,9 @@ require('nvim-tree').setup {
   modified = {
     enable = true,
   },
+  filters = {
+    git_ignored = false,
+  },
 }
 
 require('helpers.keymap').map('<leader>e', ':NvimTreeToggle<CR>', 'Toggle File Explorer')
