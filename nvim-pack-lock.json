@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "Comment.nvim": {
+      "rev": "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
+      "src": "https://github.com/numToStr/Comment.nvim"
+    },
     "bento.nvim": {
       "rev": "e7faad6469f4bf70bc7cca8cba7e154ece9c697d",
       "src": "https://github.com/serhez/bento.nvim"

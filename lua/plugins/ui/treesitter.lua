@@ -24,6 +24,7 @@ local filetypes_to_ignore = {
   'blink-cmp-documentation',
   'blink-cmp-signature',
   'image',
+  'trouble',
 }
 
 local ensure_installed = {

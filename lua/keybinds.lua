@@ -19,6 +19,15 @@ map('<Esc>', '<cmd>nohlsearch<CR>')
 -- Keybind to exit terminal mode
 map('<Esc><Esc>', '<C-\\><C-n>', 'Exit terminal mode', 't')
 
+-- Trouble.nvim keybinds
+map('<leader>td', function()
+  require('trouble').toggle 'diagnostics'
+end, '[T]oggle [D]iagnostics with Trouble.nvim')
+
+map('<leader>ts', function()
+  require('trouble').toggle 'lsp_document_symbols'
+end, '[T]oggle Document [S]ymbols with Trouble.nvim')
+
 -- LSP related keybinds, created after a LSP is attached
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-attach', { clear = false }),
@@ -40,20 +49,20 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Find references
     map('grr', function()
       Snacks.picker.lsp_references()
-    end, '[G]oto [R]eferences')
+    end, 'LSP: [G]oto [R]eferences')
 
     -- Find implementations
     map('grr', function()
       Snacks.picker.lsp_implementations()
-    end, '[G]oto [I]mplementation')
+    end, 'LSP: [G]oto [I]mplementation')
 
     -- Go to definition
-    map('grd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+    map('grd', vim.lsp.buf.definition, 'LSP: [G]oto [D]efinition')
 
     -- Go to declaration
-    map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+    map('grD', vim.lsp.buf.declaration, 'LSP: [G]oto [D]eclaration')
 
     -- Go to type definition
-    map('grt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
+    map('grt', vim.lsp.buf.type_definition, 'LSP: [G]oto [T]ype Definition')
   end,
 })
