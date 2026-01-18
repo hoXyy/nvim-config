@@ -21,7 +21,7 @@ map('<Esc><Esc>', '<C-\\><C-n>', 'Exit terminal mode', 't')
 
 -- LSP related keybinds, created after a LSP is attached
 vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+  group = vim.api.nvim_create_augroup('lsp-attach', { clear = false }),
   callback = function(event)
     -- Open diagnostics float
     map('<leader>D', vim.diagnostic.open_float, 'Show floating diagnostics window on current line')
@@ -36,5 +36,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Execute a code action
     map('gra', vim.lsp.buf.code_action, 'LSP: [G]oto Code [A]ction', { 'n', 'x' })
+
+    -- Find references
+    map('grr', function()
+      Snacks.picker.lsp_references()
+    end, '[G]oto [R]eferences')
+
+    -- Find implementations
+    map('grr', function()
+      Snacks.picker.lsp_implementations()
+    end, '[G]oto [I]mplementation')
+
+    -- Go to definition
+    map('grd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+
+    -- Go to declaration
+    map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+    -- Go to type definition
+    map('grt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
   end,
 })
