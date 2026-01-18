@@ -9,6 +9,7 @@ blink.setup {
   },
   fuzzy = { implementation = 'prefer_rust' },
   appearance = {
+    use_nvim_cmp_as_default = false,
     nerd_font_variant = 'mono',
   },
   completion = {
@@ -22,6 +23,7 @@ blink.setup {
       },
     },
     menu = {
+      scrollbar = false,
       draw = {
         components = {
           kind_icon = {
