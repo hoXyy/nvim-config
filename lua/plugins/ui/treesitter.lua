@@ -18,6 +18,12 @@ local filetypes_to_ignore = {
   'NvimTree',
   'help',
   'qf',
+  'cmp_menu',
+  'cmp_docs',
+  'blink-cmp-menu',
+  'blink-cmp-documentation',
+  'blink-cmp-signature',
+  'image',
 }
 
 local ensure_installed = {

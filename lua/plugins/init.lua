@@ -1,6 +1,6 @@
 -- Add plugins and set up colorscheme as the first thing
 vim.pack.add {
-  'https://github.com/mellow-theme/mellow.nvim',
+  'https://github.com/vague-theme/vague.nvim',
   'https://github.com/windwp/nvim-ts-autotag',
   { src = 'https://github.com/nvim-lualine/lualine.nvim', name = 'lualine' },
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
@@ -25,11 +25,11 @@ vim.pack.add {
   'https://github.com/onsails/lspkind.nvim',
   'https://github.com/folke/trouble.nvim',
   'https://github.com/folke/todo-comments.nvim',
-  'https://github.com/hrsh7th/nvim-cmp',
+  { src = 'https://github.com/saghen/blink.cmp', version = 'v1.8.0' },
 }
 
-vim.g.mellow_bold_functions = true
-vim.cmd.colorscheme 'mellow'
+require('vague').setup {}
+vim.cmd.colorscheme 'vague'
 
 require 'plugins.ui'
 require 'plugins.languages'

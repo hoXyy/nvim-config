@@ -4,6 +4,11 @@
       "rev": "e7c67aa27d1e21fd3312bde85575c12788c69e6c",
       "src": "https://github.com/serhez/bento.nvim"
     },
+    "blink.cmp": {
+      "rev": "b19413d214068f316c78978b08264ed1c41830ec",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "'v1.8.0'"
+    },
     "conform.nvim": {
       "rev": "238f542a118984a88124fc915d5b981680418707",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -52,10 +57,6 @@
       "rev": "c9d3bc2df3015d82eabe3d2d88dac1ef5746e9e8",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
-    "nvim-cmp": {
-      "rev": "85bbfad83f804f11688d1ab9486b459e699292d6",
-      "src": "https://github.com/hrsh7th/nvim-cmp"
-    },
     "nvim-lsp-file-operations": {
       "rev": "679cc6921a04d75748e22e2cf34e7c0c347f308c",
       "src": "https://github.com/igorlfs/nvim-lsp-file-operations"
@@ -101,6 +102,10 @@
     "trouble.nvim": {
       "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
       "src": "https://github.com/folke/trouble.nvim"
+    },
+    "vague.nvim": {
+      "rev": "fcc283576764474ccfbbcca240797d5d7f4d8a78",
+      "src": "https://github.com/vague-theme/vague.nvim"
     },
     "which-key.nvim": {
       "rev": "fcbf4eea17cb299c02557d576f0d568878e354a4",

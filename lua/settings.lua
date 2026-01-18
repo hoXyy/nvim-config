@@ -46,3 +46,5 @@ vim.opt.statuscolumn = '%=%{v:lnum} %{v:relnum ? v:relnum : 0}  '
 vim.o.confirm = true
 
 vim.o.wrap = false
+
+vim.g.have_nerd_font = true
