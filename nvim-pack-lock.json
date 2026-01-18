@@ -1,7 +1,7 @@
 {
   "plugins": {
     "bento.nvim": {
-      "rev": "e7c67aa27d1e21fd3312bde85575c12788c69e6c",
+      "rev": "e7faad6469f4bf70bc7cca8cba7e154ece9c697d",
       "src": "https://github.com/serhez/bento.nvim"
     },
     "blink.cmp": {
@@ -10,7 +10,7 @@
       "version": "'v1.8.0'"
     },
     "conform.nvim": {
-      "rev": "238f542a118984a88124fc915d5b981680418707",
+      "rev": "5ac2bb57a9096f00ca50e1a3c46020d5930319b8",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fidget.nvim": {
@@ -54,7 +54,7 @@
       "src": "https://github.com/mellow-theme/mellow.nvim"
     },
     "mini.nvim": {
-      "rev": "c9d3bc2df3015d82eabe3d2d88dac1ef5746e9e8",
+      "rev": "4f53281c51ad9384ef790178b9643740fa763979",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-lsp-file-operations": {
@@ -70,7 +70,7 @@
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-treesitter": {
-      "rev": "8aada0e3940c573e38b417a226b43bc8675f8958",
+      "rev": "d19def46c112c26c17adeef88dd1253cc6d623a1",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
