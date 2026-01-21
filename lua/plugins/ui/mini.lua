@@ -23,3 +23,6 @@ require('mini.pairs').setup()
 
 -- Git diff
 require('mini.diff').setup()
+
+-- Move selections
+require('mini.move').setup()
