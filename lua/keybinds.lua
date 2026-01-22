@@ -10,4 +10,8 @@ end, { desc = 'Format Document' })
 
 vim.keymap.set('n', '<leader>lg', function()
   vscode.action 'lazygit.openLazygit'
-end)
+end, { desc = 'Open Lazygit' })
+
+vim.keymap.set('n', '<leader>e', function()
+  vscode.action 'workbench.action.toggleSidebarVisibility'
+end, { desc = 'Toggle Sidebar' })
