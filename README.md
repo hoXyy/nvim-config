@@ -1,5 +1,5 @@
 ## My NeoVim config
 
-My NeoVim config, based off of kickstart.nvim.
+My NeoVim config.
 
 Clone repo to `~/.config/nvim` to use.
