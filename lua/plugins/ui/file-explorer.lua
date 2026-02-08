@@ -8,7 +8,7 @@ require('nvim-tree').setup {
     preserve_window_proportions = true,
   },
   renderer = {
-    highlight_git = true,
+    highlight_git = 'icon',
     icons = {
       glyphs = {
         default = '󰈚',
