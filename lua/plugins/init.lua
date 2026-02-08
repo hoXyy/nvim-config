@@ -32,8 +32,12 @@ vim.pack.add {
   'https://github.com/AlexvZyl/nordic.nvim',
 }
 
-require('vague').setup {}
-vim.cmd.colorscheme 'vague'
+-- require('vague').setup {}
+-- vim.cmd.colorscheme 'vague'
+
+require('nordic').load {
+  bright_border = true,
+}
 
 require 'plugins.ui'
 require 'plugins.languages'

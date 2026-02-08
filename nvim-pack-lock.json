@@ -61,6 +61,10 @@
       "rev": "8c40d95931cbe6138391af9180e59439ed2e69df",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
+    "nordic.nvim": {
+      "rev": "4ce6bad95fde832f9bd10b991de846047a144628",
+      "src": "https://github.com/AlexvZyl/nordic.nvim"
+    },
     "nvim-lsp-file-operations": {
       "rev": "679cc6921a04d75748e22e2cf34e7c0c347f308c",
       "src": "https://github.com/igorlfs/nvim-lsp-file-operations"
