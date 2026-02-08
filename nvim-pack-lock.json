@@ -69,6 +69,11 @@
       "rev": "66fd02ad1c7ea31616d3ca678fa04e6d0b360824",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
+    "nvim-surround": {
+      "rev": "1098d7b3c34adcfa7feb3289ee434529abd4afd1",
+      "src": "https://github.com/kylechui/nvim-surround",
+      "version": "'v3.1.8'"
+    },
     "nvim-tree.lua": {
       "rev": "037d89e60fb01a6c11a48a19540253b8c72a3c32",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"

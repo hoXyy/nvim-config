@@ -27,6 +27,7 @@ vim.pack.add {
   'https://github.com/folke/todo-comments.nvim',
   { src = 'https://github.com/saghen/blink.cmp', version = 'v1.8.0' },
   'https://github.com/numToStr/Comment.nvim',
+  { src = 'https://github.com/kylechui/nvim-surround', version = 'v3.1.8' },
 }
 
 require('vague').setup {}
