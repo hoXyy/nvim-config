@@ -26,6 +26,7 @@ local filetypes_to_ignore = {
   'image',
   'trouble',
   'snacks_input',
+  'mason',
 }
 
 local ensure_installed = {
