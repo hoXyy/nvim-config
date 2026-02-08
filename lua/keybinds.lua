@@ -64,5 +64,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Go to type definition
     map('grt', vim.lsp.buf.type_definition, 'LSP: [G]oto [T]ype Definition')
+
+    -- Pretty hover
+    map('K', function()
+      require('pretty_hover').hover()
+    end, 'Pretty Hover')
   end,
 })

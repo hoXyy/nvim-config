@@ -28,6 +28,8 @@ vim.pack.add {
   { src = 'https://github.com/saghen/blink.cmp', version = 'v1.8.0' },
   'https://github.com/numToStr/Comment.nvim',
   { src = 'https://github.com/kylechui/nvim-surround', version = 'v3.1.8' },
+  'https://github.com/Fildo7525/pretty_hover',
+  'https://github.com/AlexvZyl/nordic.nvim',
 }
 
 require('vague').setup {}
