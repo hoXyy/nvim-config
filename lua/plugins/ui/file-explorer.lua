@@ -37,6 +37,6 @@ require('nvim-tree').setup {
   },
 }
 
-require('helpers.keymap').map('<leader>e', ':NvimTreeToggle<CR>', 'Toggle File Explorer')
+require('helpers.keymap').map('<leader>e', ':NvimTreeToggle<CR>', 'Toggle File Explorer', 'n', true)
 
 require('lsp-file-operations').setup()
