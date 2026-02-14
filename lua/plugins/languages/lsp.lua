@@ -107,6 +107,7 @@ local servers = {
   cssls = {},
   astro = {},
   tailwindcss = {},
+  gh_actions_ls = {},
 }
 
 -- overall LSP setup
