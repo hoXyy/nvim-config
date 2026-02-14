@@ -27,6 +27,7 @@ local filetypes_to_ignore = {
   'trouble',
   'snacks_input',
   'mason',
+  'dropbar_preview',
 }
 
 local ensure_installed = {
