@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, 'LSP: [G]oto [R]eferences')
 
     -- Find implementations
-    map('grr', function()
+    map('gri', function()
       Snacks.picker.lsp_implementations()
     end, 'LSP: [G]oto [I]mplementation')
 
