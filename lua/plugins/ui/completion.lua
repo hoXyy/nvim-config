@@ -3,13 +3,10 @@ local blink = require 'blink.cmp'
 blink.setup {
   keymap = {
     preset = 'enter',
-
-    ['<CR>'] = false,
-    ['<Tab>'] = { 'accept', 'fallback' },
   },
   fuzzy = { implementation = 'prefer_rust' },
   appearance = {
-    use_nvim_cmp_as_default = false,
+    use_nvim_cmp_as_default = true,
     nerd_font_variant = 'mono',
   },
   completion = {
@@ -19,10 +16,11 @@ blink.setup {
     },
     list = {
       selection = {
-        preselect = true,
+        preselect = false,
       },
     },
     menu = {
+      border = 'none',
       scrollbar = false,
       draw = {
         components = {
