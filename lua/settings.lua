@@ -39,7 +39,7 @@ vim.o.cursorline = true
 
 vim.o.scrolloff = 10
 
-vim.o.winborder = 'rounded'
+vim.o.winborder = 'single'
 
 vim.opt.statuscolumn = '%=%{v:lnum} %{v:relnum ? v:relnum : 0}  '
 
