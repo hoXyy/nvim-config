@@ -78,9 +78,35 @@ local servers = {
     },
   },
   vue_ls = {},
-  jsonls = {},
+  jsonls = {
+    settings = {
+      json = {
+        validate = { enable = true },
+        schemas = {
+          {
+            fileMatch = { 'package.json' },
+            url = 'https://www.schemastore.org/package.json',
+          },
+          {
+            fileMatch = { 'prettierrc.json' },
+            url = 'https://www.schemastore.org/prettierrc.json',
+          },
+        },
+      },
+    },
+  },
+  yamlls = {
+    settings = {
+      validate = true,
+      schemaStore = { enable = false, url = '' },
+      schemas = {
+        ['https://raw.githubusercontent.com/compose-spec/compose-go/master/schema/compose-spec.json'] = 'docker-compose*.{yml,yaml}',
+      },
+    },
+  },
   cssls = {},
   astro = {},
+  tailwindcss = {},
 }
 
 -- overall LSP setup
