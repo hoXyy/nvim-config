@@ -30,6 +30,7 @@ vim.pack.add {
   'https://github.com/AlexvZyl/nordic.nvim',
   'https://github.com/romgrk/barbar.nvim',
   'https://github.com/Bekaboo/dropbar.nvim',
+  'https://github.com/lewis6991/gitsigns.nvim',
 }
 
 -- require('vague').setup {}
