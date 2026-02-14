@@ -1,8 +1,2 @@
-require('bento').setup {
-  ui = {
-    mode = 'tabline',
-    floating = {
-      minimal_menu = 'filename',
-    },
-  },
-}
+require('barbar').setup()
+require('dropbar').setup()
