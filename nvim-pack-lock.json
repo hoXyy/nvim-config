@@ -92,22 +92,6 @@
       "rev": "4ca988557786c9a4e41d5e5b6e31b4c9d7379f53",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
-    "neotest": {
-      "rev": "deadfb1af5ce458742671ad3a013acb9a6b41178",
-      "src": "https://github.com/nvim-neotest/neotest"
-    },
-    "neotest-jest": {
-      "rev": "3f0cc2cff1ee05394081805c622dc2551b54d8c4",
-      "src": "https://github.com/nvim-neotest/neotest-jest"
-    },
-    "neotest-vitest": {
-      "rev": "f01addc6f07b79ef1be5f4297eafbee9e0959018",
-      "src": "https://github.com/marilari88/neotest-vitest"
-    },
-    "nordic.nvim": {
-      "rev": "4ce6bad95fde832f9bd10b991de846047a144628",
-      "src": "https://github.com/AlexvZyl/nordic.nvim"
-    },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
@@ -123,10 +107,6 @@
     "nvim-lspconfig": {
       "rev": "44acfe887d4056f704ccc4f17513ed41c9e2b2e6",
       "src": "https://github.com/neovim/nvim-lspconfig"
-    },
-    "nvim-nio": {
-      "rev": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
-      "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-surround": {
       "rev": "1098d7b3c34adcfa7feb3289ee434529abd4afd1",
