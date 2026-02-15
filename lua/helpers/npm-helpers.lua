@@ -17,5 +17,19 @@ return {
       end
       path = vim.fn.fnamemodify(path, ':h')
     end
+
+    return 'npm'
+  end,
+  isNodeProject = function()
+    local path = vim.fn.expand '%:p:h'
+
+    while path ~= '/' do
+      if vim.fn.filereadable(path .. '/package.json') == 1 then
+        return true, path
+      end
+      path = vim.fn.fnamemodify(path, ':h')
+    end
+
+    return false, nil
   end,
 }

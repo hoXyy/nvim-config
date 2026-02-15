@@ -14,5 +14,18 @@ end, {})
 
 -- npm install, with automatic package manager detection
 vim.api.nvim_create_user_command('NpmInstall', function()
-  local packageManager = require('helpers.node-package-manager-detect').detectPackageManager()
+  local isNodeProject = require('helpers.npm-helpers').isNodeProject()
+  if not isNodeProject then
+    vim.notify('Not in Node.js project, aborting...', vim.log.levels.WARN)
+    return
+  end
+
+  local packageManager = require('helpers.npm-helpers').detectPackageManager()
+  local install_cmd = {
+    npm = 'npm install',
+    yarn = 'yarn install',
+    pnpm = 'pnpm install',
+    bun = 'bun install',
+  }
+  vim.cmd('!' .. install_cmd[packageManager])
 end, { desc = 'install npm dependencies, with automatic package manager detection' })
