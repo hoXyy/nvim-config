@@ -19,15 +19,6 @@ map('<Esc>', '<cmd>nohlsearch<CR>')
 -- Keybind to exit terminal mode
 map('<Esc><Esc>', '<C-\\><C-n>', 'Exit terminal mode', 't')
 
--- Trouble.nvim keybinds
-map('<leader>td', function()
-  require('trouble').toggle 'diagnostics'
-end, '[T]oggle [D]iagnostics with Trouble.nvim')
-
-map('<leader>ts', function()
-  require('trouble').toggle 'lsp_document_symbols'
-end, '[T]oggle Document [S]ymbols with Trouble.nvim')
-
 -- LSP related keybinds, created after a LSP is attached
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-attach', { clear = false }),
@@ -68,6 +59,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Hover
     map('K', function()
       vim.lsp.buf.hover()
-    end, 'Pretty Hover')
+    end, 'Hover')
+
+    -- Trouble.nvim keybinds
+    map('<leader>td', function()
+      require('trouble').toggle 'diagnostics'
+    end, '[T]oggle [D]iagnostics with Trouble.nvim')
+
+    map('<leader>ts', function()
+      require('trouble').toggle 'lsp_document_symbols'
+    end, '[T]oggle Document [S]ymbols with Trouble.nvim')
   end,
 })
