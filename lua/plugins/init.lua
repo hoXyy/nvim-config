@@ -31,6 +31,11 @@ vim.pack.add {
   'https://github.com/romgrk/barbar.nvim',
   'https://github.com/Bekaboo/dropbar.nvim',
   'https://github.com/lewis6991/gitsigns.nvim',
+  'https://github.com/antoinemadec/FixCursorHold.nvim',
+  'https://github.com/nvim-neotest/nvim-nio',
+  'https://github.com/nvim-neotest/neotest',
+  'https://github.com/nvim-neotest/neotest-jest',
+  'https://github.com/marilari88/neotest-vitest',
 }
 
 require('vague').setup {
