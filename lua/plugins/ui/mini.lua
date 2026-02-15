@@ -11,9 +11,6 @@ require('mini.ai').setup {
   n_lines = 500,
 }
 
--- Autopairs
-require('mini.pairs').setup()
-
 -- Git diff
 require('mini.diff').setup()
 

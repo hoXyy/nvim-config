@@ -24,7 +24,6 @@ vim.pack.add {
   'https://github.com/onsails/lspkind.nvim',
   'https://github.com/folke/trouble.nvim',
   'https://github.com/folke/todo-comments.nvim',
-  { src = 'https://github.com/saghen/blink.cmp', version = 'v1.8.0' },
   'https://github.com/numToStr/Comment.nvim',
   { src = 'https://github.com/kylechui/nvim-surround', version = 'v3.1.8' },
   'https://github.com/romgrk/barbar.nvim',
@@ -35,6 +34,14 @@ vim.pack.add {
   'https://github.com/nvim-neotest/neotest',
   'https://github.com/nvim-neotest/neotest-jest',
   'https://github.com/marilari88/neotest-vitest',
+  'https://github.com/xzbdmw/colorful-menu.nvim',
+  'https://github.com/hrsh7th/nvim-cmp',
+  'https://github.com/hrsh7th/cmp-nvim-lsp',
+  'https://github.com/hrsh7th/cmp-buffer',
+  'https://github.com/hrsh7th/cmp-cmdline',
+  'https://github.com/hrsh7th/cmp-path',
+  'https://github.com/windwp/nvim-autopairs',
+  'https://github.com/ray-x/lsp_signature.nvim',
 }
 
 require('vague').setup {

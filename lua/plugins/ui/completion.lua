@@ -1,73 +1,113 @@
-local blink = require 'blink.cmp'
+local cmp = require 'cmp'
+local colorful_menu = require 'colorful-menu'
+local lspkind = require 'lspkind'
+local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 
-blink.setup {
-  keymap = {
-    preset = 'enter',
+colorful_menu.setup {}
+
+cmp.setup {
+  mapping = cmp.mapping.preset.insert {
+    ['<CR>'] = cmp.mapping.confirm { select = true },
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
   },
-  fuzzy = { implementation = 'prefer_rust' },
-  appearance = {
-    use_nvim_cmp_as_default = true,
-    nerd_font_variant = 'mono',
+
+  formatting = {
+    fields = { 'icon', 'abbr', 'kind', 'menu' },
+
+    format = function(entry, vim_item)
+      local kind = lspkind.cmp_format {
+        mode = 'symbol_text',
+      }(entry, vim.deepcopy(vim_item))
+      local highlights_info = colorful_menu.cmp_highlights(entry)
+
+      if highlights_info ~= nil then
+        vim_item.abbr_hl_group = highlights_info.highlights
+        vim_item.abbr = highlights_info.text
+      end
+      local strings = vim.split(kind.kind, '%s', { trimempty = true })
+      vim_item.kind = ' ' .. (strings[1] or '') .. ' '
+      vim_item.menu = ''
+
+      return vim_item
+    end,
   },
+
+  view = {
+    docs = {
+      auto_open = true,
+    },
+  },
+
+  performance = {
+    debounce = 0,
+    throttle = 1,
+    fetching_timeout = 100,
+    confirm_resolve_timeout = 1,
+    async_budget = 50,
+    max_view_entries = 100,
+    filtering_context_budget = 100,
+  },
+
   completion = {
-    documentation = {
-      auto_show = true,
-      auto_show_delay_ms = 0,
-    },
-    list = {
-      selection = {
-        preselect = false,
-      },
-    },
-    menu = {
-      border = 'none',
-      scrollbar = false,
-      draw = {
-        components = {
-          kind_icon = {
-            text = function(ctx)
-              local icon = ctx.kind_icon
-              if vim.tbl_contains({ 'Path' }, ctx.source_name) then
-                local dev_icon, _ = require('nvim-web-devicons').get_icon(ctx.label)
-                if dev_icon then
-                  icon = dev_icon
-                end
-              else
-                icon = require('lspkind').symbol_map[ctx.kind]
-              end
+    autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged },
+    completeopt = 'menu,menuone,noinsert',
+  },
 
-              return icon .. ctx.icon_gap
-            end,
-          },
-        },
-        columns = {
-          { 'label', 'label_description', gap = 1 },
-          { 'kind_icon', 'kind', gap = 1 },
-        },
-      },
+  window = {
+    documentation = cmp.config.window.bordered {
+      winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+    },
+    completion = cmp.config.window.bordered {
+      col_offset = -3,
     },
   },
-  sources = {
-    default = { 'lsp', 'path', 'buffer' },
-    per_filetype = {
-      lua = { inherit_defaults = true, 'lazydev' },
-      typescript = { 'lsp', 'buffer' }, -- JS/TS LSP already suggests files by itself
-      javascript = { 'lsp', 'buffer' },
-      typescriptreact = { 'lsp', 'buffer' },
-      javascriptreact = { 'lsp', 'buffer' },
-    },
-    providers = {
-      lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
-    },
-  },
-  signature = {
-    enabled = true,
-    window = {
-      show_documentation = true,
-    },
-    trigger = { enabled = true },
-  },
-  cmdline = {
-    completion = { menu = { auto_show = true } },
+
+  preselect = cmp.PreselectMode.None,
+
+  sources = cmp.config.sources {
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'path' },
+    { name = 'buffer' },
   },
 }
+
+cmp.setup.filetype('lua', {
+  sources = cmp.config.sources {
+    { name = 'lazydev', group_index = 0 },
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+    { name = 'buffer' },
+  },
+})
+
+local js_ts_filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact' }
+for _, ft in ipairs(js_ts_filetypes) do
+  cmp.setup.filetype(ft, {
+    sources = cmp.config.sources {
+      { name = 'nvim_lsp' },
+      { name = 'buffer' },
+    },
+  })
+end
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources {
+    { name = 'path' },
+    { name = 'cmdline' },
+  },
+})
+
+cmp.setup.cmdline({ '/', '?' }, {
+  enabled = vim.bo.filetype ~= 'vim',
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' },
+  },
+})
+
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())

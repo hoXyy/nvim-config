@@ -173,6 +173,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 for server, config in pairs(servers) do
-  vim.lsp.config(server, config)
+  vim.lsp.config(
+    server,
+    vim.tbl_deep_extend('force', config, {
+      capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    })
+  )
   vim.lsp.enable(server)
 end
