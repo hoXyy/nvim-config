@@ -11,3 +11,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_user_command('PackUpdate', function()
   vim.pack.update()
 end, {})
+
+-- npm install, with automatic package manager detection
+vim.api.nvim_create_user_command('NpmInstall', function()
+  local packageManager = require('helpers.node-package-manager-detect').detectPackageManager()
+end, { desc = 'install npm dependencies, with automatic package manager detection' })
