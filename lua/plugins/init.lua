@@ -27,7 +27,6 @@ vim.pack.add {
   { src = 'https://github.com/saghen/blink.cmp', version = 'v1.8.0' },
   'https://github.com/numToStr/Comment.nvim',
   { src = 'https://github.com/kylechui/nvim-surround', version = 'v3.1.8' },
-  'https://github.com/vague-theme/vague.nvim',
   'https://github.com/romgrk/barbar.nvim',
   'https://github.com/Bekaboo/dropbar.nvim',
   'https://github.com/lewis6991/gitsigns.nvim',
