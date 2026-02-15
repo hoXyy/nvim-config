@@ -71,3 +71,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, '[T]oggle Document [S]ymbols with Trouble.nvim')
   end,
 })
+
+map('<leader>nt', '<cmd>NpmTest<CR>', '[N]PM: Run [T]ests')
+map('<leader>ni', '<cmd>NpmInstall<CR>', '[N]PM: [I]nstall')
