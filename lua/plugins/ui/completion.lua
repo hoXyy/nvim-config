@@ -3,9 +3,26 @@ local colorful_menu = require 'colorful-menu'
 local lspkind = require 'lspkind'
 local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 
+local function is_buffer_large(bufnr)
+  local filepath = vim.api.nvim_buf_get_name(bufnr)
+
+  if filepath == '' then
+    return false -- Unnamed buffer
+  end
+
+  local stat = vim.loop.fs_stat(filepath)
+  return stat and stat.size > 1000000 -- 1 MB
+end
+
 colorful_menu.setup {}
 
 cmp.setup {
+  enabled = function()
+    local disabled = false
+    disabled = disabled or is_buffer_large(vim.api.nvim_get_current_buf())
+    return not disabled
+  end,
+
   mapping = cmp.mapping.preset.insert {
     ['<CR>'] = cmp.mapping.confirm { select = true },
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
