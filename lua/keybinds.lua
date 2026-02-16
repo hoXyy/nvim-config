@@ -72,5 +72,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- npm keybinds
 map('<leader>nt', '<cmd>NpmTest<CR>', '[N]PM: Run [T]ests')
 map('<leader>ni', '<cmd>NpmInstall<CR>', '[N]PM: [I]nstall')
+
+-- barbar keybinds
+map(']b', '<cmd>BufferNext<CR>', 'Next buffer')
+map('[b', '<cmd>BufferPrevious<CR>', 'Previous buffer')
+map('<leader>cb', '<cmd>BufferClose<CR>', '[C]lose [B]uffer')
+map('<leader>pb', '<cmd>BufferPin<CR>', '[P]in [B]uffer')
