@@ -41,7 +41,7 @@ vim.o.scrolloff = 10
 
 vim.o.winborder = 'rounded'
 
-vim.opt.statuscolumn = '%=%{v:lnum} %{v:relnum ? v:relnum : 0}  '
+-- vim.opt.statuscolumn = '%=%{v:lnum} %{v:relnum ? v:relnum : 0}  '
 
 vim.o.confirm = true
 
