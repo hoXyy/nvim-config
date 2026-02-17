@@ -1,1 +1,6 @@
-require('todo-comments').setup()
+return {
+  {
+    'folke/todo-comments.nvim',
+    opts = {},
+  },
+}

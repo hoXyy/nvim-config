@@ -1,3 +1,8 @@
-require('lsp_signature').setup {
-  hint_enable = false,
+return {
+  {
+    'ray-x/lsp_signature.nvim',
+    opts = {
+      hint_enable = false,
+    },
+  },
 }

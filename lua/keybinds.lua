@@ -9,8 +9,8 @@ map('<C-j>', '<C-w><C-j>', 'Move focus to the lower window')
 map('<C-k>', '<C-w><C-k>', 'Move focus to the upper window')
 
 -- Making splits
-vim.keymap.set('n', '<leader>|', '<C-W>s', { desc = 'Split window below', remap = true })
-vim.keymap.set('n', '<leader>-', '<C-W>v', { desc = 'Split window right', remap = true })
+vim.keymap.set('n', '<leader>-', '<C-W>s', { desc = 'Split window below', remap = true })
+vim.keymap.set('n', '<leader>|', '<C-W>v', { desc = 'Split window right', remap = true })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -60,24 +60,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('K', function()
       vim.lsp.buf.hover()
     end, 'Hover')
-
-    -- Trouble.nvim keybinds
-    map('<leader>td', function()
-      require('trouble').toggle 'diagnostics'
-    end, '[T]oggle [D]iagnostics with Trouble.nvim')
-
-    map('<leader>ts', function()
-      require('trouble').toggle 'lsp_document_symbols'
-    end, '[T]oggle Document [S]ymbols with Trouble.nvim')
   end,
 })
 
 -- npm keybinds
 map('<leader>nt', '<cmd>NpmTest<CR>', '[N]PM: Run [T]ests')
 map('<leader>ni', '<cmd>NpmInstall<CR>', '[N]PM: [I]nstall')
-
--- barbar keybinds
-map(']b', '<cmd>BufferNext<CR>', 'Next buffer')
-map('[b', '<cmd>BufferPrevious<CR>', 'Previous buffer')
-map('<leader>cb', '<cmd>BufferClose<CR>', '[C]lose [B]uffer')
-map('<leader>pb', '<cmd>BufferPin<CR>', '[P]in [B]uffer')
