@@ -134,7 +134,7 @@ return {
         templ = 'html',
       },
       experimental = {
-        configFile = find_tailwind_global_css(),
+        -- configFile is set asynchronously in on_attach to avoid startup delays
       },
     },
   },
@@ -148,6 +148,23 @@ return {
     if not config.settings.editor.tabSize then
       config.settings.editor.tabSize = vim.lsp.util.get_effective_tabstop()
     end
+  end,
+  on_attach = function(client, _)
+    -- Defer config file search to avoid blocking startup
+    vim.defer_fn(function()
+      local config_file = find_tailwind_global_css()
+      if config_file then
+        client.notify('workspace/didChangeConfiguration', {
+          settings = {
+            tailwindCSS = {
+              experimental = {
+                configFile = config_file,
+              },
+            },
+          },
+        })
+      end
+    end, 100)
   end,
   workspace_required = true,
   root_dir = function(bufnr, on_dir)
