@@ -1,14 +1,10 @@
 return {
   {
-    'vague-theme/vague.nvim',
+    'folke/tokyonight.nvim',
     priority = 100,
     lazy = false,
-    name = 'vague',
     config = function()
-      require('vague').setup {
-        italic = false,
-      }
-      vim.cmd.colorscheme 'vague'
+      vim.cmd.colorscheme 'tokyonight'
     end,
   },
 }

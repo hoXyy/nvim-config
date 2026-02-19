@@ -4,7 +4,7 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       icons_enabled = true,
-      theme = 'vague',
+      theme = 'tokyonight',
       options = {
         globalstatus = vim.o.laststatus == 3,
         section_separators = { left = '', right = '' },
