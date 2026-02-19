@@ -22,7 +22,7 @@ return {
         local max_depth = 10
 
         local function parse_version(dirname)
-          local major, minor, patch = dirname:match("^typescript@(%d+)%.(%d+)%.(%d+)")
+          local major, minor, patch = dirname:match '^typescript@(%d+)%.(%d+)%.(%d+)'
           if major then
             return tonumber(major) * 10000 + tonumber(minor) * 100 + tonumber(patch)
           end
@@ -30,25 +30,29 @@ return {
         end
 
         local function find_in_pnpm(base_path)
-          local pattern = base_path .. "/node_modules/.pnpm/typescript@*/node_modules/typescript/lib"
+          local pattern = base_path .. '/node_modules/.pnpm/typescript@*/node_modules/typescript/lib'
           local matches = vim.fn.glob(pattern, false, true)
 
-          if #matches == 0 then return nil end
-          if #matches == 1 then return matches[1] end
+          if #matches == 0 then
+            return nil
+          end
+          if #matches == 1 then
+            return matches[1]
+          end
 
           -- Sort by version and return highest
           table.sort(matches, function(a, b)
-            return parse_version(vim.fn.fnamemodify(a, ":h:h:h:t")) > parse_version(vim.fn.fnamemodify(b, ":h:h:h:t"))
+            return parse_version(vim.fn.fnamemodify(a, ':h:h:h:t')) > parse_version(vim.fn.fnamemodify(b, ':h:h:h:t'))
           end)
           return matches[1]
         end
 
         local function check_shamefully_hoist(path)
-          local npmrc = path .. "/.npmrc"
+          local npmrc = path .. '/.npmrc'
           if vim.fn.filereadable(npmrc) == 1 then
             local content = vim.fn.readfile(npmrc)
             for _, line in ipairs(content) do
-              if line:match("^shamefully%-hoist%s*=%s*true") then
+              if line:match '^shamefully%-hoist%s*=%s*true' then
                 return true
               end
             end
@@ -57,14 +61,16 @@ return {
         end
 
         return function(root_dir)
-          if cache[root_dir] then return cache[root_dir] end
+          if cache[root_dir] then
+            return cache[root_dir]
+          end
 
           local current = root_dir
           local depth = 0
 
-          while current and current ~= "/" and depth < max_depth do
+          while current and current ~= '/' and depth < max_depth do
             -- Check pnpm workspace root first
-            if vim.fn.filereadable(current .. "/pnpm-workspace.yaml") == 1 then
+            if vim.fn.filereadable(current .. '/pnpm-workspace.yaml') == 1 then
               local tsdk = find_in_pnpm(current)
               if tsdk then
                 cache[root_dir] = tsdk
@@ -74,7 +80,7 @@ return {
 
             -- Check standard location first if shamefully-hoist
             if check_shamefully_hoist(current) then
-              local std_path = current .. "/node_modules/typescript/lib"
+              local std_path = current .. '/node_modules/typescript/lib'
               if vim.fn.isdirectory(std_path) == 1 then
                 cache[root_dir] = std_path
                 return std_path
@@ -89,13 +95,13 @@ return {
             end
 
             -- Check standard npm/yarn location
-            local std_tsdk = current .. "/node_modules/typescript/lib"
+            local std_tsdk = current .. '/node_modules/typescript/lib'
             if vim.fn.isdirectory(std_tsdk) == 1 then
               cache[root_dir] = std_tsdk
               return std_tsdk
             end
 
-            current = vim.fn.fnamemodify(current, ":h")
+            current = vim.fn.fnamemodify(current, ':h')
             depth = depth + 1
           end
 
@@ -210,16 +216,16 @@ return {
         astro = {
           init_options = {
             typescript = {
-              tsdk = nil
-            }
+              tsdk = nil,
+            },
           },
           before_init = function(_, config)
             local tsdk = get_tsdk(config.root_dir)
             if not tsdk then
-              tsdk = vim.fn.expand('$MASON/packages/typescript-language-server/node_modules/typescript/lib')
+              tsdk = vim.fn.expand '$MASON/packages/typescript-language-server/node_modules/typescript/lib'
             end
             config.init_options.typescript.tsdk = tsdk
-          end
+          end,
         },
         -- tailwindcss = {},
         gh_actions_ls = {},
@@ -228,7 +234,7 @@ return {
       -- overall LSP setup
       vim.diagnostic.config {
         severity_sort = true,
-        float = { border = 'rounded', source = 'if_many' },
+        float = { source = 'if_many' },
         underline = { severity = vim.diagnostic.severity.ERROR },
         signs = {
           text = {
