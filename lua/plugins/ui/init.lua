@@ -1,15 +1,17 @@
-require 'plugins.ui.icons'
-require 'plugins.ui.statusline'
-require 'plugins.ui.treesitter'
-require 'plugins.ui.which-key'
-require 'plugins.ui.lsp-progress'
-require 'plugins.ui.indent-guide'
-require 'plugins.ui.buffer-management'
-require 'plugins.ui.snacks'
-require 'plugins.ui.mini'
-require 'plugins.ui.file-explorer'
-require 'plugins.ui.todo-comments'
-require 'plugins.ui.autopairs'
-require 'plugins.ui.signature-help'
-require 'plugins.ui.completion'
-require 'plugins.ui.gitsigns'
+return {
+  require 'plugins.ui.colorscheme',
+  require 'plugins.ui.icons',
+  require 'plugins.ui.statusline',
+  require 'plugins.ui.treesitter',
+  require 'plugins.ui.which-key',
+  require 'plugins.ui.indent-guide',
+  require 'plugins.ui.buffer-management',
+  require 'plugins.ui.snacks',
+  require 'plugins.ui.mini',
+  require 'plugins.ui.file-explorer',
+  require 'plugins.ui.todo-comments',
+  require 'plugins.ui.autopairs',
+  require 'plugins.ui.signature-help',
+  require 'plugins.ui.completion',
+  require 'plugins.ui.gitsigns',
+}

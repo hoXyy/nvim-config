@@ -1,5 +1,7 @@
-require 'plugins.languages.mason'
-require 'plugins.languages.lsp'
-require 'plugins.languages.formatting'
-require 'plugins.languages.comments'
-require 'plugins.languages.surround'
+return {
+  require 'plugins.languages.mason',
+  require 'plugins.languages.lsp',
+  require 'plugins.languages.formatting',
+  require 'plugins.languages.comments',
+  require 'plugins.languages.surround',
+}

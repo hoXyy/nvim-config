@@ -1,3 +1,9 @@
-require('lsp_signature').setup {
-  hint_enable = false,
+return {
+  {
+    'ray-x/lsp_signature.nvim',
+    event = 'InsertEnter',
+    opts = {
+      hint_enable = false,
+    },
+  },
 }
