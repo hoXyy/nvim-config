@@ -15,7 +15,7 @@ return {
               backdrop = false,
               width = 0.8,
               height = 0.9,
-              border = 'none',
+              border = 'single',
               {
                 box = 'vertical',
                 { win = 'list', title = ' Results ', title_pos = 'center', border = true },
