@@ -7,8 +7,6 @@ return {
       theme = 'tokyonight',
       options = {
         globalstatus = vim.o.laststatus == 3,
-        section_separators = { left = '', right = '' },
-        component_separators = { left = '', right = '' },
         disabled_filetypes = {
           statusline = { 'NvimTree' },
         },
