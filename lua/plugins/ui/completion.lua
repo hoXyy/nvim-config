@@ -92,6 +92,7 @@ return {
           },
           completion = cmp.config.window.bordered {
             col_offset = -3,
+            side_padding = 1,
           },
         },
 
