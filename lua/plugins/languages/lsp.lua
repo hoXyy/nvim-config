@@ -130,6 +130,7 @@ return {
       }
 
       local servers = {
+        bashls = {},
         lua_ls = {
           Lua = {
             completion = {
