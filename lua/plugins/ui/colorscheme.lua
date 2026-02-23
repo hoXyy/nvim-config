@@ -1,14 +1,15 @@
 return {
   {
-    'vague-theme/vague.nvim',
+    'catppuccin/nvim',
     priority = 100,
+    name = 'catppuccin',
     lazy = false,
     config = function()
-      require('vague').setup {
-        italic = false,
+      require('catppuccin').setup {
+        no_italic = true,
       }
 
-      vim.cmd.colorscheme 'vague'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 }
