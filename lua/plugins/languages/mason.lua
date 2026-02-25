@@ -16,7 +16,7 @@ return {
           'bashls',
           'jsonls',
           'html',
-          'eslint',
+          -- 'eslint',
           'vue_ls',
           'cssls',
           'astro',
@@ -24,6 +24,7 @@ return {
           'yamlls',
           'gh_actions_ls',
           'vtsls',
+          'prettier',
         },
       }
     end,
