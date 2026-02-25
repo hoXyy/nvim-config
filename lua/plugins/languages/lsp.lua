@@ -14,12 +14,39 @@ return {
     'esmuellert/nvim-eslint',
     config = function()
       require('nvim-eslint').setup {
-        settings = {
-          codeActionOnSave = {
-            enable = true,
-            mode = 'all',
-          },
+        handlers = {
+          ['eslint/noConfig'] = function(_, result)
+            vim.notify(result.message, vim.log.levels.WARN)
+          end,
+          ['workspace/diagnostic/refresh'] = function(_, _, ctx)
+            local ns = vim.lsp.diagnostic.get_namespace(ctx.client_id)
+            local bufnr = vim.api.nvim_get_current_buf()
+            vim.diagnostic.reset(ns, bufnr)
+            return true
+          end,
         },
+        settings = {
+          codeActionOnSave = { enable = true, mode = 'all' },
+          format = true,
+        },
+        on_attach = function(client, bufnr)
+          vim.api.nvim_buf_create_user_command(bufnr, 'LspEslintFixAll', function()
+            client:request_sync('workspace/executeCommand', {
+              command = 'eslint.applyAllFixes',
+              arguments = {
+                {
+                  uri = vim.uri_from_bufnr(bufnr),
+                  version = vim.lsp.util.buf_versions[bufnr],
+                },
+              },
+            }, nil, bufnr)
+          end, {})
+
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            buffer = bufnr,
+            command = 'LspEslintFixAll',
+          })
+        end,
       }
     end,
   },
