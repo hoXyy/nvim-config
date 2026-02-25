@@ -12,4 +12,7 @@ return {
       vim.cmd.colorscheme 'catppuccin'
     end,
   },
+  {
+    'HiPhish/rainbow-delimiters.nvim',
+  },
 }
