@@ -9,6 +9,20 @@ return {
       },
     },
   },
+  -- TODO: decide if i want to keep this
+  {
+    'esmuellert/nvim-eslint',
+    config = function()
+      require('nvim-eslint').setup {
+        settings = {
+          codeActionOnSave = {
+            enable = true,
+            mode = 'all',
+          },
+        },
+      }
+    end,
+  },
   {
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -178,14 +192,14 @@ return {
           end,
           filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
         },
-        eslint = {
-          settings = {
-            codeActionOnSave = {
-              enable = true,
-              mode = 'all',
-            },
-          },
-        },
+        -- eslint = {
+        --   settings = {
+        --     codeActionOnSave = {
+        --       enable = true,
+        --       mode = 'all',
+        --     },
+        --   },
+        -- },
         vue_ls = {},
         jsonls = {
           settings = {
