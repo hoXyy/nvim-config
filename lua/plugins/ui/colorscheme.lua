@@ -1,15 +1,18 @@
 return {
   {
-    'catppuccin/nvim',
+    'navarasu/onedark.nvim',
     priority = 100,
-    name = 'catppuccin',
+    name = 'onedark',
     lazy = false,
     config = function()
-      require('catppuccin').setup {
-        no_italic = true,
+      require('onedark').setup {
+        style = 'dark',
+        diagnostics = {
+          darker = false,
+        },
       }
 
-      vim.cmd.colorscheme 'catppuccin'
+      require('onedark').load()
     end,
   },
   {
