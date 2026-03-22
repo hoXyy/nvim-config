@@ -8,9 +8,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Update plugins
-vim.api.nvim_create_user_command('PackUpdate', function()
-  vim.pack.update()
-end, {})
+-- vim.api.nvim_create_user_command('PackUpdate', function()
+--   vim.pack.update()
+-- end, {})
 
 -- npm install, with automatic package manager detection
 vim.api.nvim_create_user_command('NpmInstall', function()
