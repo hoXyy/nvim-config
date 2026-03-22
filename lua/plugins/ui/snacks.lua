@@ -118,6 +118,14 @@ return {
         desc = '[S]earch [T]odo Comments',
       },
       {
+        '<leader>ss',
+        function()
+          Snacks.picker.lsp_symbols()
+        end,
+        mode = 'n',
+        desc = '[S]earch [S]ymbols',
+      },
+      {
         '<leader>lg',
         function()
           Snacks.lazygit()
