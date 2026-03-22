@@ -16,6 +16,7 @@ return {
   -- TODO: decide if i want to keep this
   {
     'esmuellert/nvim-eslint',
+    ft = { 'javascriptreact', 'javascript', 'typescript', 'typescriptreact', 'astro' },
     config = function()
       require('nvim-eslint').setup {
         handlers = {

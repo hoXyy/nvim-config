@@ -2,6 +2,7 @@ return {
   {
     'folke/trouble.nvim',
     opts = {},
+    event = 'BufEnter',
     keys = {
       {
         '<leader>td',

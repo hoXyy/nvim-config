@@ -35,6 +35,9 @@ return {
       input = {
         enabled = true,
       },
+      dashboard = {
+        enabled = true,
+      },
     },
     keys = {
       {
