@@ -4,4 +4,5 @@ return {
   require 'plugins.languages.formatting',
   require 'plugins.languages.comments',
   require 'plugins.languages.surround',
+  require 'plugins.languages.neotest',
 }

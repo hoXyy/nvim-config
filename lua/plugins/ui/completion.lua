@@ -14,7 +14,6 @@ return {
       local cmp = require 'cmp'
       local colorful_menu = require 'colorful-menu'
       local lspkind = require 'lspkind'
-      local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 
       local function is_buffer_large(bufnr)
         local filepath = vim.api.nvim_buf_get_name(bufnr)
@@ -141,8 +140,6 @@ return {
           { name = 'buffer' },
         },
       })
-
-      cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
     end,
   },
 }

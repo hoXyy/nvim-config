@@ -15,7 +15,4 @@ return {
       require('onedark').load()
     end,
   },
-  {
-    'HiPhish/rainbow-delimiters.nvim',
-  },
 }
