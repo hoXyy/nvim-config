@@ -25,6 +25,8 @@ return {
           'gh_actions_ls',
           'vtsls',
           'prettier',
+          'clangd',
+          'clang-format',
         },
       }
     end,
