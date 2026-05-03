@@ -1,20 +1,12 @@
 return {
   {
-    'catppuccin/nvim',
+    'AvengeMedia/base46',
     priority = 1000,
-    name = 'catppuccin',
     lazy = false,
     config = function()
-      require('catppuccin').setup {
-        flavour = 'mocha',
-        no_italic = true,
-        dim_inactive = {
-          enabled = true,
-        },
-        auto_integrations = true,
-      }
+      require('base46').setup {}
 
-      vim.cmd.colorscheme 'catppuccin-nvim'
+      vim.cmd.colorscheme 'base46-catppuccin'
     end,
   },
 }
