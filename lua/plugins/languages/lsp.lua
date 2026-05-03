@@ -59,7 +59,6 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       { 'j-hui/fidget.nvim', opts = {} },
-      'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       -- Dynamic TypeScript SDK finder with pnpm support
@@ -155,8 +154,6 @@ return {
           return nil
         end
       end)()
-
-      local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       local function any_client_supports(bufnr, capability)
         for _, client in ipairs(vim.lsp.get_clients { bufnr = bufnr }) do
@@ -342,12 +339,7 @@ return {
       })
 
       for server, config in pairs(servers) do
-        vim.lsp.config(
-          server,
-          vim.tbl_deep_extend('force', config, {
-            capabilities = cmp_capabilities,
-          })
-        )
+        vim.lsp.config(server, config)
         vim.lsp.enable(server)
       end
     end,

@@ -11,7 +11,6 @@ return {
   require 'plugins.ui.file-explorer',
   require 'plugins.ui.todo-comments',
   require 'plugins.ui.autopairs',
-  require 'plugins.ui.signature-help',
   require 'plugins.ui.completion',
   require 'plugins.ui.gitsigns',
 }
