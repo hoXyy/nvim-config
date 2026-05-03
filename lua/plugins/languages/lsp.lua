@@ -273,6 +273,7 @@ return {
         },
         -- tailwindcss = {},
         gh_actions_ls = {},
+        clangd = {},
       }
 
       -- overall LSP setup
