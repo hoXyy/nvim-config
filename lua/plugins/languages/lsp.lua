@@ -274,6 +274,11 @@ return {
         -- tailwindcss = {},
         gh_actions_ls = {},
         clangd = {},
+        rust_analyzer = {
+          on_attach = function()
+            vim.lsp.inlay_hint.enable(true)
+          end,
+        },
       }
 
       -- overall LSP setup
