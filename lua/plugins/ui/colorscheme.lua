@@ -6,7 +6,7 @@ return {
     config = function()
       require('base46').setup {}
 
-      vim.cmd.colorscheme 'base46-catppuccin'
+      vim.cmd.colorscheme 'base46-nord'
     end,
   },
 }
