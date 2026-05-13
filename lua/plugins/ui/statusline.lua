@@ -4,7 +4,7 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       icons_enabled = true,
-      theme = 'base46-kanagawa',
+      theme = 'base46-catppuccin',
       options = {
         globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = {
