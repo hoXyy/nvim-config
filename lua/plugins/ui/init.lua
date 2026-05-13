@@ -13,4 +13,5 @@ return {
   require 'plugins.ui.autopairs',
   require 'plugins.ui.completion',
   require 'plugins.ui.gitsigns',
+  require 'plugins.ui.codelens',
 }
